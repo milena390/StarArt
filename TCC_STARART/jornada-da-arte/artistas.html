@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo da Arte - Grandes Mestres</title>
+    <link rel="stylesheet" href="style_artists.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    /* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f8f8; /* Cor de fundo clara */
+    color: #333;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header - Reutilizado do anterior, mas com pequenas alterações para a navegação */
+header {
+    background-color: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #5C4033; /* Marrom escuro */
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #5C4033;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active { /* Estilo para o item ativo na navegação */
+    color: #A0522D; /* Marrom mais claro para hover e ativo */
+}
+
+.share-button {
+    background-color: #5C4033;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.share-button:hover {
+    background-color: #A0522D;
+}
+
+/* Hero Section para artistas */
+.hero-artists {
+    background-color: #f8f8f8;
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+.hero-artists h2 {
+    font-size: 38px;
+    color: #5C4033;
+    margin-bottom: 20px;
+}
+
+/* Grid de Artistas (Cartões) */
+.artists-grid {
+    padding: 40px 0;
+}
+
+.artists-grid .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 colunas, ajustável */
+    gap: 30px; /* Espaço entre os cartões */
+    justify-content: center; /* Centraliza os cartões quando há menos de 3 */
+}
+
+.artist-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    overflow: hidden; /* Garante que o ícone arredondado não transborde */
+    display: flex;
+    flex-direction: column; /* Conteúdo empilhado */
+}
+
+.card-header {
+    background-color: #FDF5E6; /* Fundo claro para a área do ícone */
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 1px solid #F0E6D2;
+}
+
+.artist-icon {
+    width: 80px;
+    height: 80px;
+    background-color: #A0522D; /* Cor marrom-alaranjada do ícone */
+    border-radius: 50%; /* Torna o ícone circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px; /* Tamanho do "símbolo" */
+    color: #fff; /* Cor do "símbolo" */
+    margin: 0 auto; /* Centraliza o ícone */
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Permite que o corpo do cartão se expanda */
+}
+
+.card-body h3 {
+    font-size: 22px;
+    color: #5C4033;
+    margin-bottom: 5px;
+    text-align: center; /* Centraliza o nome do artista */
+}
+
+.card-body .dates {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 15px;
+    text-align: center; /* Centraliza as datas */
+}
+
+.card-body p {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço disponível */
+}
+
+.main-works {
+    background-color: #FDF5E6; /* Cor amarelada clara para obras principais */
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #F0E6D2;
+    margin-top: auto; /* Empurra para o final do card-body */
+}
+
+.main-works h4 {
+    font-size: 16px;
+    color: #5C4033;
+    margin-bottom: 10px;
+}
+
+.main-works ul {
+    list-style: none; /* Remove marcadores de lista */
+    color: #555;
+}
+
+.main-works ul li {
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.main-works ul li::before {
+    content: '•';
+    color: #5C4033;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+/* Mensagem "Ativar o Windows" */
+.windows-activation-notice {
+    text-align: right;
+    font-size: 12px;
+    color: #777;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+/* Footer - Reutilizado do anterior */
+footer {
+    background-color: #5C4033;
+    color: #fff;
+    padding: 30px 0;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.footer-info h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    font-size: 14px;
+    color: #eee;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 20px;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #A0522D;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin-top: 20px;
+    font-size: 13px;
+    color: #ddd;
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    .share-button {
+        margin-top: 15px;
+    }
+
+    .artists-grid .container {
+        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+    }
+}
+</style>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <h1>Mundo da Arte</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Início</a></li> <li><a href="#">História da Arte</a></li>
+                    <li><a href="#" class="active">Artistas</a></li> <li><a href="#">Movimentos</a></li>
+                </ul>
+            </nav>
+            <button class="share-button"><i class="fas fa-share-alt"></i> Compartilhar</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-artists">
+            <div class="container">
+                <h2>Grandes Mestres da Arte</h2>
+            </div>
+        </section>
+
+        <section class="artists-grid">
+            <div class="container">
+                <div class="artist-card">
+                    <div class="card-header">
+                        <div class="artist-icon">O</div> </div>
+                    <div class="card-body">
+                        <h3>Leonardo da Vinci</h3>
+                        <p class="dates">1452-1519 • Renascimento Italiano</p>
+                        <p>Gênio polímata, Leonardo foi pintor, cientista, matemático e inventor. Sua técnica do sfumato e estudos anatômicos revolucionaram a arte.</p>
+                        <div class="main-works">
+                            <h4>Obras Principais:</h4>
+                            <ul>
+                                <li>Mona Lisa</li>
+                                <li>A Última Ceia</li>
+                                <li>Homem Vitruviano</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <div class="card-header">
+                        <div class="artist-icon">~</div> </div>
+                    <div class="card-body">
+                        <h3>Vincent van Gogh</h3>
+                        <p class="dates">1853-1890 • Pós-Impressionismo</p>
+                        <p>Artista holandês conhecido por suas pinceladas expressivas e cores vibrantes. Sua vida atormentada e paixão pela arte o tornaram um símbolo do artista incompreendido.</p>
+                        <div class="main-works">
+                            <h4>Obras Principais:</h4>
+                            <ul>
+                                <li>Noite Estrelada</li>
+                                <li>Girassóis</li>
+                                <li>Auto-retrato com Orelha Bandada</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <div class="card-header">
+                        <div class="artist-icon">^_^</div> </div>
+                    <div class="card-body">
+                        <h3>Frida Kahlo</h3>
+                        <p class="dates">1907-1954 • Surrealismo/Arte Mexicana</p>
+                        <p>Artista mexicana conhecida por seus auto-retratos e obras que retratam sua dor física e emocional. Seu estilo único mistura elementos do folclore mexicano e surrealismo.</p>
+                        <div class="main-works">
+                            <h4>Obras Principais:</h4>
+                            <ul>
+                                <li>As Duas Fridas</li>
+                                <li>A Coluna Partida</li>
+                                <li>Auto-retrato com Colar de Espinhos</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <div class="card-header">
+                        <div class="artist-icon">☐</div> </div>
+                    <div class="card-body">
+                        <h3>Pablo Picasso</h3>
+                        <p class="dates">1881-1973 • Cubismo/Arte Moderna</p>
+                        <p>Artista espanhol e co-fundador do Cubismo. Sua carreira abrangeu diversos estilos e técnicas, revolucionando a arte do século XX com sua abordagem inovadora.</p>
+                        <div class="main-works">
+                            <h4>Obras Principais:</h4>
+                            <ul>
+                                <li>Guernica</li>
+                                <li>Les Demoiselles d'Avignon</li>
+                                <li>A Mulher que Chora</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <div class="card-header">
+                        <div class="artist-icon">o</div> </div>
+                    <div class="card-body">
+                        <h3>Tarsila do Amaral</h3>
+                        <p class="dates">1886-1973 • Modernismo Brasileiro</p>
+                        <p>Pintora brasileira que sintetizou as tendências europeias de vanguarda com elementos da cultura brasileira, criando um estilo único que celebra a identidade nacional.</p>
+                        <div class="main-works">
+                            <h4>Obras Principais:</h4>
+                            <ul>
+                                <li>Abaporu</li>
+                                <li>A Negra</li>
+                                <li>Operários</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artist-card">
+                    <div class="card-header">
+                        <div class="artist-icon">⊕</div> </div>
+                    <div class="card-body">
+                        <h3>Michelangelo</h3>
+                        <p class="dates">1475-1564 • Renascimento Italiano</p>
+                        <p>Escultor, pintor e arquiteto italiano, considerado um dos maiores artistas de todos os tempos. Suas obras demonstram domínio técnico excepcional e profunda expressividade.</p>
+                        <div class="main-works">
+                            <h4>Obras Principais:</h4>
+                            <ul>
+                                <li>Teto da Capela Sistina</li>
+                                <li>David</li>
+                                <li>Pietà</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="windows-activation-notice">
+            Ativar o Windows<br>
+            Acesse Configurações para ativar o Windows.
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>Mundo da Arte</h3>
+                <p>Explorando a beleza e a história da expressão artística</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>&copy; 2023 Mundo da Arte. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

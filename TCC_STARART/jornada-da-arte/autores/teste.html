@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Teste Tema Claro/Escuro</title>
+<style>
+  /* ===== Tema Escuro (Padrão) ===== */
+  body {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    background-color: #0A192F;
+    color: #E0E0E0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  a {
+    color: #D4AF37;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #b8942e;
+    text-decoration: underline;
+  }
+  header {
+    background-color: #0A192F;
+    border-bottom: 1px solid #D4AF37;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  /* Botão tema */
+  #theme-toggle {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #D4AF37;
+    border: none;
+    border-radius: 50%;
+    padding: 0.6rem 0.75rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #0A192F;
+    box-shadow: 0 0 8px #D4AF37;
+    user-select: none;
+    z-index: 9999;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  #theme-toggle:hover {
+    background-color: #b8942e;
+  }
+  /* ===== Tema Claro ===== */
+  body.light-theme {
+    background-color: #f5f8ff;
+    color: #0A192F;
+  }
+  body.light-theme a {
+    color: #1A5AFF;
+  }
+  body.light-theme a:hover {
+    color: #154ecc;
+  }
+  body.light-theme header {
+    background-color: #f5f8ff;
+    border-bottom-color: #1A5AFF;
+    color: #0A192F;
+    box-shadow: 0 4px 10px rgba(26, 90, 255, 0.3);
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>StarArt</h1>
+  <nav>
+    <a href="#">Início</a>
+    <a href="#">Arte</a>
+    <a href="#">Autores</a>
+  </nav>
+</header>
+
+<main style="padding: 2rem;">
+  <h2>Conteúdo da página</h2>
+  <p>Teste do tema claro e escuro com botão.</p>
+  <a href="#">Um link exemplo</a>
+</main>
+
+<button id="theme-toggle" aria-label="Alternar tema">🌞</button>
+
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+
+  // Aplica tema salvo no localStorage
+  window.onload = () => {
+    const tema = localStorage.getItem('tema');
+    if (tema === 'claro') {
+      document.body.classList.add('light-theme');
+      toggleButton.textContent = '🌙';
+    } else {
+      toggleButton.textContent = '🌞';
+    }
+  };
+
+  toggleButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-theme');
+
+    if (document.body.classList.contains('light-theme')) {
+      toggleButton.textContent = '🌙';
+      localStorage.setItem('tema', 'claro');
+    } else {
+      toggleButton.textContent = '🌞';
+      localStorage.setItem('tema', 'escuro');
+    }
+  });
+</script>
+</body>
+</html>

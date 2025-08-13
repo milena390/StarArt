@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>StarArt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="styleprincipal.css" />
+
+  <!-- Link para o arquivo JS externo no head com defer -->
+  <script src="scriptprincipal.js" defer></script>
+  
+</head>
+<body>
+
+  <!-- Intro com logo e mensagem -->
+  <div class="intro" id="intro">
+    <img src="img/logo.png" alt="Logo StarArt" class="intro-logo" id="logo" />
+    <h1 class="welcome-message" id="welcome">Seja bem-vindo ao StarArt!</h1>
+  </div>
+
+  <!-- Botão tema claro/escuro -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
+    <span class="icon sun" aria-hidden="true">🤍</span>
+  
+  </button>
+
+  <header>
+    <div class="logo-container">
+      <span class="logo-text">StarArt</span>
+    </div>
+    <nav>
+      <a href="#" class="active">Início</a>
+      <a href="movintos.html">Movimentos da Arte</a>
+      <a href="historia.html">Historia da Arte</a>
+      <a href="#">Quiz</a>
+    </nav>
+  </header>
+  <br>
+  
+
+  <section class="hero" role="banner">
+    <div class="hero-imagem"></div>
+    <h1>Descubra a Fascinante Mundo da Arte</h1>
+   <center> <p>Explore a historia,os artistas e os movimentos que moldaram nosssa cultura visual através dos séculos.</p></center>
+    <a href="#" class="btn" role="button">Comece sua jornada</a>
+  </section>
+
+
+<section class="conteudo">
+  <h2>Explore Nosso Conteúdo</h2>
+  <div class="cards">
+    <div class="card-box">
+      <div class="icon">📖</div>
+      <h3>História da Arte</h3>
+      <p>Da arte rupestre ao contemporâneo, explore a evolução da expressão artística através dos tempos.</p>
+      <a href="#historia">Explorar História →</a>
+    </div>
+    <div class="card-box">
+      <div class="icon">❤️</div>
+      <h3>Grandes Artistas</h3>
+      <p>Conheça as vidas e obras dos mestres que revolucionaram a arte e deixaram legados eternos.</p>
+      <a href="#artistas">Conhecer Artistas →</a>
+    </div>
+    <div class="card-box">
+      <div class="icon">🎨</div>
+      <h3>Movimentos Artísticos</h3>
+      <p>Do Renascimento ao Surrealismo, entenda as correntes que definiram períodos da história da arte.</p>
+      <a href="#movimentos">Descobrir Movimentos →</a>
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    <p>© 2025 StarArt. Todos os direitos reservados.</p>
+    <p>
+      <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a>
+    </p>
+  </footer>
+
+<script>
+  window.onload = () => {
+  const intro = document.getElementById('intro');
+
+  // Verifica se a intro já foi exibida antes
+  const introShown = localStorage.getItem('introShown');
+
+  if (!introShown) {
+    // Se não foi exibida, mostra a intro e grava no localStorage
+    setTimeout(() => {
+      intro.classList.add('move-logo');
+    }, 2000);
+    setTimeout(() => {
+      intro.style.opacity = '0';
+      intro.style.pointerEvents = 'none';
+      document.body.style.overflow = 'auto'; // libera scroll após intro
+      localStorage.setItem('introShown', 'true'); // Marca que a intro já foi mostrada
+    }, 3500);
+  } else {
+    // Se já foi exibida, esconde imediatamente e libera scroll
+    intro.style.opacity = '0';
+    intro.style.pointerEvents = 'none';
+    document.body.style.overflow = 'auto';
+  }
+};
+
+</script>
+     
+</body>
+</html>

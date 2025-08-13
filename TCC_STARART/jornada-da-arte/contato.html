@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contato | StarArt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #0A192F;
+      color: #E0E0E0;
+    }
+
+    header {
+      background-color: #112240;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      color: #D4AF37;
+      font-size: 2rem;
+    }
+
+    .container {
+      max-width: 550px;
+      margin: 3rem auto;
+      background-color: #112240;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+      text-align: center;
+      color: #D4AF37;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.9rem;
+      margin-top: 0.4rem;
+      border-radius: 10px;
+      border: none;
+      font-size: 1rem;
+      background-color: #F5F5F5;
+      color: #0A192F;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      margin-top: 1.8rem;
+      padding: 0.9rem 2rem;
+      background-color: #D4AF37;
+      color: #0A192F;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #b9912f;
+      transform: scale(1.02);
+    }
+
+    .mensagem-sucesso {
+      background-color: #1f3a2e;
+      color: #A3FFB0;
+      padding: 1rem;
+      margin-top: 1rem;
+      border: 1px solid #4CAF50;
+      border-radius: 10px;
+      text-align: center;
+      display: none;
+    }
+
+    .credit {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #888;
+    }
+
+    @media (max-width: 500px) {
+      .container {
+        margin: 2rem 1rem;
+        padding: 2rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>StarArt</h1>
+  </header>
+
+  <div class="container">
+    <h2>Fale com a gente</h2>
+    <form id="form-contato">
+      <label for="nome">Seu nome</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Seu e-mail</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensagem">Sua mensagem</label>
+      <textarea id="mensagem" name="mensagem" required></textarea>
+
+      <button type="submit">Enviar mensagem</button>
+    </form>
+
+    <div class="mensagem-sucesso" id="mensagem-sucesso">
+      Sua mensagem foi enviada com sucesso! 🎉
+    </div>
+  </div>
+
+  <div class="credit">✨ StarArt - Inspiração que transcende o tempo</div>
+
+  <script>
+    const form = document.getElementById('form-contato');
+    const sucesso = document.getElementById('mensagem-sucesso');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // impede envio real
+      sucesso.style.display = 'block';
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>

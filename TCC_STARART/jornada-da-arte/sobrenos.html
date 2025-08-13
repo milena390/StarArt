@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre Nós - StarArt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --fundo-escuro: #0A192F;
+      --texto-principal: #E0E0E0;
+      --texto-destaque: #D4AF37;
+      --branco-suave: #F5F5F5;
+
+      --fundo-claro: #D0E8FF;
+      --texto-claro: #000000;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif;
+      background-color: var(--fundo-escuro);
+      color: var(--texto-principal);
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.4s, color 0.4s;
+    }
+
+    body.claro {
+      background-color: var(--fundo-claro);
+      color: var(--texto-claro);
+    }
+
+    #toggle-tema {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background-color: var(--texto-destaque);
+      color: #000;
+      font-size: 1.3rem;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s, transform 0.3s;
+      z-index: 1000;
+    }
+
+    #toggle-tema:hover {
+      transform: scale(1.1);
+    }
+
+    body.claro #toggle-tema {
+      background-color: var(--texto-claro);
+      color: var(--fundo-escuro);
+    }
+
+    #sobre-nos {
+      padding: 4rem 2rem;
+    }
+
+    #sobre-nos .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    #sobre-nos h2 {
+      font-size: 2.5rem;
+      color: var(--texto-destaque);
+      margin-bottom: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    body.claro #sobre-nos h2 {
+      color: #0A192F;
+    }
+
+    #sobre-nos h2::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: var(--texto-destaque);
+      margin: 0.5rem auto;
+      border-radius: 2px;
+    }
+
+    #sobre-nos h3 {
+      color: var(--texto-destaque);
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+
+    body.claro #sobre-nos h3 {
+      color: #0A192F;
+    }
+
+    #sobre-nos p {
+      line-height: 1.8;
+      margin: 1rem 0;
+    }
+
+    #sobre-nos ul {
+      list-style-type: square;
+      padding-left: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    #sobre-nos li {
+      margin-bottom: 0.5rem;
+    }
+
+    #sobre-nos p:first-of-type {
+      font-style: italic;
+      font-size: 1.2rem;
+      text-align: center;
+      color: var(--branco-suave);
+    }
+
+    body.claro #sobre-nos p:first-of-type {
+      color: #000000;
+    }
+
+    @media (max-width: 768px) {
+      #sobre-nos {
+        padding: 3rem 1rem;
+      }
+
+      #sobre-nos h2 {
+        font-size: 2rem;
+      }
+
+      #sobre-nos h3 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botão redondo de alternância de tema -->
+  <button id="toggle-tema" title="Mudar tema">🌙</button>
+
+  <section id="sobre-nos">
+    <div class="container">
+      <h2>Sobre Nós</h2>
+      <p>“Explorando o passado, inspirando o presente.”</p>
+
+      <p>Bem-vindo ao <strong>StarArt</strong>, um espaço dedicado à celebração da criatividade, da história e da expressão artística. Criado como um projeto educacional, o StarArt tem como objetivo tornar o aprendizado sobre arte algo acessível, interativo e envolvente para todos os públicos.</p>
+
+      <h3>🌟 Missão</h3>
+      <p>Nossa missão é inspirar, ensinar e encantar os amantes da arte — sejam eles iniciantes, curiosos ou apaixonados — através de uma plataforma digital intuitiva, educativa e interativa, onde a criatividade e o conhecimento caminham juntos.</p>
+
+      <h3>👁️ Visão</h3>
+      <p>Acreditamos que a arte é uma linguagem universal, capaz de transformar vidas, contar histórias e conectar culturas. Nossa visão é construir um espaço inclusivo, moderno e envolvente onde qualquer pessoa possa explorar a história da arte, aprender sobre obras icônicas e se divertir com experiências imersivas.</p>
+
+      <h3>💡 Nossos Valores</h3>
+      <ul>
+        <li><strong>Criatividade:</strong> Valorizamos a originalidade, a expressão pessoal e o pensamento fora da caixa.</li>
+        <li><strong>Educação:</strong> Acreditamos no poder do aprendizado como ferramenta de transformação.</li>
+        <li><strong>Interatividade:</strong> Queremos que o usuário aprenda brincando, explorando e participando.</li>
+        <li><strong>Acessibilidade:</strong> A arte é para todos. Buscamos tornar o conteúdo claro, visual e acessível.</li>
+        <li><strong>Colaboração:</strong> Trabalhamos juntas, respeitando as ideias e talentos de cada integrante.</li>
+      </ul>
+
+      <h3>🛤️ Nossa História</h3>
+      <p>O <strong>StarArt</strong> foi criado em 2023 por um grupo de alunas da <strong>ETEC</strong>, durante o desenvolvimento de um projeto escolar voltado à área de tecnologia e design educacional. Unidas pela paixão pela arte e pela vontade de inovar no aprendizado, nasceu a ideia de criar um site que fosse mais do que informativo — que fosse interativo, bonito e divertido.</p>
+      <p><strong>Integrantes:</strong> Melissa Martins, Melena Aparecida, Ravisya Narciso, Priscila Floriano e Yasmin Moreira.</p>
+
+      <h3>🖼️ O que Oferecemos</h3>
+      <ul>
+        <li>Linha do tempo interativa com os principais movimentos da arte.</li>
+        <li>Quiz divertido e desafiador sobre artistas, estilos e obras famosas.</li>
+        <li>Jogo da memória artístico para aprender brincando.</li>
+        <li>Exposições virtuais com imagens, animações e curiosidades.</li>
+        <li>Conteúdo sobre como apreciar arte de forma simples e prazerosa.</li>
+        <li>Páginas dedicadas a artistas como Van Gogh, Dalí e Picasso.</li>
+      </ul>
+
+      <h3>💬 Chamada à Ação</h3>
+      <p><strong>Junte-se a nós nessa jornada artística!</strong> Explore cada canto do StarArt, teste seus conhecimentos nos jogos, descubra fatos curiosos sobre as obras mais famosas do mundo e apaixone-se pela arte junto com a gente. A sua visita já é parte dessa história.</p>
+    </div>
+  </section>
+
+  <script>
+    const botaoTema = document.getElementById('toggle-tema');
+
+    botaoTema.addEventListener('click', () => {
+      document.body.classList.toggle('claro');
+      botaoTema.textContent = document.body.classList.contains('claro') ? '☀️' : '🌙';
+    });
+  </script>
+
+</body>
+</html>
