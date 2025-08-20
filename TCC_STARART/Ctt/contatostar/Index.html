@@ -4,83 +4,126 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário de Contato</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+/* Fonte principal */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-    body {
-      font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(to right, #0a1d56, #062d6f);
-      color: #f5f5f5;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+/* Estilos gerais do corpo */
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #0A192F; /* fundo azul escuro */
+  color: #E0E0E0; /* texto cinza claro */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-    .container {
-      background-color: #111c44;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
-      width: 100%;
-      max-width: 500px;
-    }
+body.light-theme {
+  background-color: #dbeeff; /* azul bebê suave */
+  color: #0A192F; /* texto azul escuro */
+}
 
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #ffd700;
-    }
+/* Títulos */
+h1 {
+  font-size: 2.5rem;
+  color: #D4AF37; /* dourado */
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #D4AF37; /* brilho no texto */
+}
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+/* Formulário */
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 5rem auto;
+  background: linear-gradient(135deg, rgba(16, 22, 38, 0.9), rgba(11, 15, 23, 0.8)); /* fundo suave com gradiente */
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* sombra suave para o formulário */
+  backdrop-filter: blur(8px); /* efeito de desfoque no fundo */
+}
 
-    label {
-      display: block;
-      margin-bottom: 6px;
-      color: #ffd700;
-      font-weight: bold;
-    }
+/* Grupos de campo do formulário */
+.form-group {
+  margin-bottom: 1.5rem;
+}
 
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      border-radius: 6px;
-      border: none;
-      outline: none;
-      background-color: #f0f0f0;
-      color: #000;
-      font-size: 16px;
-    }
+label {
+  font-size: 1rem;
+  color: #D4AF37;
+  margin-bottom: 0.5rem;
+  display: block;
+}
 
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
+/* Campos de entrada e textarea */
+input, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #D4AF37;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #E0E0E0;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
 
-    button {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 6px;
-      background-color: #ffd700;
-      color: #0a1d56;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
+input:focus, textarea:focus {
+  border-color: #b8942e; /* dourado escuro */
+  background-color: rgba(0, 0, 0, 0.1);
+  outline: none;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7); /* efeito de brilho ao focar */
+}
 
-    button:hover {
-      background-color: #e6c200;
-    }
-  </style>
+/* Botão Enviar */
+button {
+  background-color: #D4AF37;
+  color: #0A192F;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #b8942e;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #D4AF37; /* brilho no botão ao passar o mouse */
+}
+
+button:active {
+  transform: scale(1.02);
+}
+
+/* Efeito de brilho nas letras ao passar o mouse (hover) */
+button:hover, input:hover, textarea:hover {
+  text-shadow: 0 0 8px #D4AF37; /* brilho nas letras */
+  color: #D4AF37; /* cor dourada para o texto */
+}
+
+/* Mensagem de alerta */
+.alerta {
+  color: #D4AF37;
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+
+</style>
 </head>
 <body>
   <div class="container">
