@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário de Contato</title>
 <style>
+
 /* Fonte principal */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
@@ -29,6 +30,52 @@ h1 {
   text-align: center;
   margin-bottom: 2rem;
   text-shadow: 0 0 10px #D4AF37; /* brilho no texto */
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, rgba(16, 22, 38, 0.8), rgba(11, 15, 23, 0.8)); /* fundo com gradiente suave */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #D4AF37;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+body.light-theme header {
+  background: linear-gradient(135deg, #dbeeff, #c9e1ff);
+  border-bottom: 1px solid #D4AF37;
+}
+
+header h1 {
+  color: #D4AF37;
+  font-size: 1.8rem;
+  text-shadow: 0 0 10px #D4AF37; /* brilho no título */
+}
+
+header nav a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #E0E0E0;
+  margin-left: 20px;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+body.light-theme header nav a {
+  color: #0A192F;
+}
+
+header nav a:hover {
+  color: #D4AF37; /* dourado */
+  text-shadow: 0 0 8px #D4AF37; /* brilho no texto do link */
+  border-bottom: 2px solid #D4AF37;
+  padding-bottom: 3px;
 }
 
 /* Formulário */
@@ -122,8 +169,22 @@ button:hover, input:hover, textarea:hover {
   }
 }
 
-
 </style>
+<header>
+  <div class="logo-container">
+    <span class="logo-text">StarArt</span>
+  </div>
+  <nav>
+    <a href="#" class="active">Início</a>
+    <a href="movintos.html">Movimentos da Arte</a>
+    <a href="historia.html">Historia da Arte</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="../Ctt/contatostar/Index.html">Contato</a>
+  </nav>
+</header>
+<br>
+
+
 </head>
 <body>
   <div class="container">
