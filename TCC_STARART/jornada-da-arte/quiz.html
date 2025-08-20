@@ -1,169 +1,278 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Quiz StarArt</title>
-  <style>
-    body {
-      background-color: #0A192F;
-      color: #E0E0E0;
-      font-family: 'Arial', sans-serif;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-    h2 {
-      color: #D4AF37;
-    }
-    .option {
-      margin: 10px 0;
-      padding: 10px;
-      background-color: #1F2A44;
-      border: 1px solid #D4AF37;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .option:hover {
-      background-color: #D4AF37;
-      color: #0A192F;
-    }
-    #feedback, #final-score, #ranking {
-      margin-top: 20px;
-    }
-    #next-btn, #save-score {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #D4AF37;
-      color: #0A192F;
-      font-weight: bold;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Quiz StarArt</title>
+    <style>
+        body {
+            background-color: #0A192F;
+            color: #E0E0E0;
+            font-family: 'Arial', sans-serif;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+        h1 {
+            color: #D4AF37;
+        }
+        h2 {
+            color: #D4AF37;
+            margin-top: 2rem;
+        }
+        .option {
+            margin: 10px auto;
+            padding: 15px;
+            background-color: #1F2A44;
+            border: 1px solid #D4AF37;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 70%;
+            text-align: left;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .option:hover {
+            background-color: #D4AF37;
+            color: #0A192F;
+        }
+        .difficulty-option {
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #1F2A44;
+            border: 2px solid #D4AF37;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 50%;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, background-color 0.3s;
+        }
+        .difficulty-option:hover {
+            transform: scale(1.05);
+            background-color: #D4AF37;
+            color: #0A192F;
+        }
+        #feedback, #final-score, #ranking {
+            margin-top: 20px;
+        }
+        #next-btn, #save-score {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #D4AF37;
+            color: #0A192F;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #next-btn:hover, #save-score:hover {
+            background-color: #bfa02c;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
-  <h2 id="question-title"></h2>
-  <p id="question-text"></p>
-  <div id="options"></div>
-  <div id="feedback"></div>
-  <button id="next-btn" onclick="proximaPergunta()" style="display:none;">Próxima</button>
+    <div id="difficulty-selection">
+        <h1>Escolha a Dificuldade do Quiz</h1>
+        <div class="difficulty-option" onclick="iniciarQuiz('facil')">
+            <h2>Fácil</h2>
+            <p>Perguntas introdutórias sobre arte.</p>
+        </div>
+        <div class="difficulty-option" onclick="iniciarQuiz('medio')">
+            <h2>Médio</h2>
+            <p>Perguntas de conhecimento geral sobre movimentos e artistas.</p>
+        </div>
+        <div class="difficulty-option" onclick="iniciarQuiz('dificil')">
+            <h2>Difícil</h2>
+            <p>Perguntas detalhadas e desafiadoras para experts.</p>
+        </div>
+    </div>
 
-  <div id="final-score" style="display:none;">
-    <p>Sua pontuação: <span id="score"></span></p>
-    <input type="text" id="username" placeholder="Digite seu nome">
-    <button id="save-score" onclick="salvarPontuacao()">Salvar Pontuação</button>
-  </div>
+    <div id="quiz-game" class="hidden">
+        <h2 id="question-title"></h2>
+        <p id="question-text"></p>
+        <div id="options"></div>
+        <div id="feedback"></div>
+        <button id="next-btn" onclick="proximaPergunta()" class="hidden">Próxima</button>
 
-  <div id="ranking">
-    <h3>Ranking:</h3>
-    <ul id="ranking-list"></ul>
-  </div>
+        <div id="final-score" class="hidden">
+            <p>Sua pontuação: <span id="score"></span></p>
+            <input type="text" id="username" placeholder="Digite seu nome">
+            <button id="save-score" onclick="salvarPontuacao()">Salvar Pontuação</button>
+        </div>
 
-  <!-- Sons -->
-  <audio id="correct-sound" src="sounds/correct.mp3"></audio>
-  <audio id="wrong-sound" src="sounds/wrong.mp3"></audio>
+        <div id="ranking">
+            <h3>Ranking:</h3>
+            <ul id="ranking-list"></ul>
+        </div>
+    </div>
 
-  <script>
-    const perguntas = [
-      {
-        titulo: "1",
-        pergunta: "Quem pintou 'A Noite Estrelada'?",
-        opcoes: { a: "Picasso", b: "Van Gogh", c: "Monet", d: "Dalí" },
-        correta: "b"
-      },
-      {
-        titulo: "2",
-        pergunta: "Obra 'Guernica' retrata...",
-        opcoes: { a: "Sonhos", b: "Amor", c: "Guerra", d: "Flores" },
-        correta: "c"
-      }
-    ];
+    <audio id="correct-sound" src="sounds/correct.mp3"></audio>
+    <audio id="wrong-sound" src="sounds/wrong.mp3"></audio>
 
-    let indice = 0, pontuacao = 0;
+    <script>
+        // Conjuntos de perguntas por dificuldade
+        const perguntas = {
+            facil: [
+                {
+                    titulo: "1",
+                    pergunta: "Quem pintou 'A Noite Estrelada'?",
+                    opcoes: { a: "Picasso", b: "Van Gogh", c: "Monet", d: "Dalí" },
+                    correta: "b"
+                },
+                {
+                    titulo: "2",
+                    pergunta: "Obra 'Guernica' retrata...",
+                    opcoes: { a: "Sonhos", b: "Amor", c: "Guerra", d: "Flores" },
+                    correta: "c"
+                },
+                {
+                    titulo: "3",
+                    pergunta: "Qual movimento artístico se concentra em formas geométricas e cores primárias?",
+                    opcoes: { a: "Impressionismo", b: "Cubismo", c: "Expressionismo", d: "Surrealismo" },
+                    correta: "b"
+                }
+            ],
+            medio: [
+                {
+                    titulo: "1",
+                    pergunta: "A 'Mona Lisa' foi pintada por qual artista do Renascimento?",
+                    opcoes: { a: "Michelangelo", b: "Rafael", c: "Leonardo da Vinci", d: "Donatello" },
+                    correta: "c"
+                },
+                {
+                    titulo: "2",
+                    pergunta: "Qual artista é conhecido por suas 'latas de sopa Campbell'?",
+                    opcoes: { a: "Roy Lichtenstein", b: "Jackson Pollock", c: "Andy Warhol", d: "Banksy" },
+                    correta: "c"
+                },
+                {
+                    titulo: "3",
+                    pergunta: "O que o movimento Dadaísmo buscava?",
+                    opcoes: { a: "Realismo", b: "Absurdo e irracionalidade", c: "Natureza idealizada", d: "Arte abstrata" },
+                    correta: "b"
+                }
+            ],
+            dificil: [
+                {
+                    titulo: "1",
+                    pergunta: "Qual é o nome da técnica de pintura que utiliza pequenas pinceladas de cores puras, vistas de longe para se misturar?",
+                    opcoes: { a: "Pontilhismo", b: "Fauvismo", c: "Cubismo", d: "Surrealismo" },
+                    correta: "a"
+                },
+                {
+                    titulo: "2",
+                    pergunta: "Qual a escola artística que surgiu em Paris no início do século XX e buscava a representação da realidade através de múltiplas perspectivas?",
+                    opcoes: { a: "Realismo", b: "Futurismo", c: "Dadaísmo", d: "Cubismo" },
+                    correta: "d"
+                },
+                {
+                    titulo: "3",
+                    pergunta: "O 'Três de Maio de 1808' é uma obra de qual artista?",
+                    opcoes: { a: "Goya", b: "Velázquez", c: "Rembrandt", d: "Rubens" },
+                    correta: "a"
+                }
+            ]
+        };
 
-    function tocarSom(id) {
-      document.getElementById(id).play();
-    }
+        let perguntasAtuais = [];
+        let indice = 0;
+        let pontuacao = 0;
 
-    function mostrarPergunta() {
-      let p = perguntas[indice];
-      document.getElementById('question-title').textContent = "Pergunta " + p.titulo;
-      document.getElementById('question-text').textContent = p.pergunta;
+        function iniciarQuiz(dificuldade) {
+            perguntasAtuais = perguntas[dificuldade];
+            document.getElementById('difficulty-selection').classList.add('hidden');
+            document.getElementById('quiz-game').classList.remove('hidden');
+            mostrarPergunta();
+        }
 
-      let opDiv = document.getElementById('options');
-      opDiv.innerHTML = '';
-      for (let letra in p.opcoes) {
-        let btn = document.createElement('div');
-        btn.className = 'option';
-        btn.textContent = `${letra.toUpperCase()}) ${p.opcoes[letra]}`;
-        btn.onclick = () => verificarResposta(letra);
-        opDiv.appendChild(btn);
-      }
+        function tocarSom(id) {
+            const som = document.getElementById(id);
+            som.play();
+        }
 
-      document.getElementById('feedback').textContent = '';
-      document.getElementById('next-btn').style.display = 'none';
-    }
+        function mostrarPergunta() {
+            let p = perguntasAtuais[indice];
+            document.getElementById('question-title').textContent = "Pergunta " + p.titulo;
+            document.getElementById('question-text').textContent = p.pergunta;
 
-    function verificarResposta(resposta) {
-      let correta = perguntas[indice].correta;
-      let feedback = document.getElementById('feedback');
-      if (resposta === correta) {
-        tocarSom('correct-sound');
-        feedback.textContent = "✅ Correta!";
-        feedback.style.color = "#00FF88";
-        pontuacao++;
-      } else {
-        tocarSom('wrong-sound');
-        feedback.textContent = `❌ Errada. Resposta correta: ${correta.toUpperCase()}`;
-        feedback.style.color = "#FF5555";
-      }
-      document.getElementById('next-btn').style.display = 'inline';
-      document.querySelectorAll('.option').forEach(o => o.onclick = null);
-    }
+            let opDiv = document.getElementById('options');
+            opDiv.innerHTML = '';
+            for (let letra in p.opcoes) {
+                let btn = document.createElement('div');
+                btn.className = 'option';
+                btn.textContent = `${letra.toUpperCase()}) ${p.opcoes[letra]}`;
+                btn.onclick = () => verificarResposta(letra);
+                opDiv.appendChild(btn);
+            }
 
-    function proximaPergunta() {
-      indice++;
-      if (indice < perguntas.length) {
-        mostrarPergunta();
-      } else {
-        document.getElementById('question-title').style.display = 'none';
-        document.getElementById('question-text').style.display = 'none';
-        document.getElementById('options').style.display = 'none';
-        document.getElementById('next-btn').style.display = 'none';
-        document.getElementById('feedback').style.display = 'none';
-        document.getElementById('final-score').style.display = 'block';
-        document.getElementById('score').textContent = `${pontuacao} / ${perguntas.length}`;
-      }
-    }
+            document.getElementById('feedback').textContent = '';
+            document.getElementById('next-btn').classList.add('hidden');
+        }
 
-    function salvarPontuacao() {
-      let nome = document.getElementById('username').value || "Anônimo";
-      fetch('salvar_pontuacao.php', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: `nome=${encodeURIComponent(nome)}&pontuacao=${pontuacao}`
-      })
-      .then(() => carregarRanking());
-    }
+        function verificarResposta(resposta) {
+            let correta = perguntasAtuais[indice].correta;
+            let feedback = document.getElementById('feedback');
+            if (resposta === correta) {
+                tocarSom('correct-sound');
+                feedback.textContent = "✅ Correta!";
+                feedback.style.color = "#00FF88";
+                pontuacao++;
+            } else {
+                tocarSom('wrong-sound');
+                feedback.textContent = `❌ Errada. Resposta correta: ${correta.toUpperCase()}`;
+                feedback.style.color = "#FF5555";
+            }
+            document.getElementById('next-btn').classList.remove('hidden');
+            document.querySelectorAll('.option').forEach(o => o.onclick = null);
+        }
 
-    function carregarRanking() {
-      fetch('listar_ranking.php')
-        .then(res => res.json())
-        .then(dados => {
-          let lista = document.getElementById('ranking-list');
-          lista.innerHTML = '';
-          dados.forEach((item, i) => {
-            let li = document.createElement('li');
-            li.textContent = `${i + 1}. ${item.nome} - ${item.pontuacao} pts`;
-            lista.appendChild(li);
-          });
-        });
-    }
+        function proximaPergunta() {
+            indice++;
+            if (indice < perguntasAtuais.length) {
+                mostrarPergunta();
+            } else {
+                document.getElementById('quiz-game').classList.add('hidden');
+                document.getElementById('final-score').classList.remove('hidden');
+                document.getElementById('score').textContent = `${pontuacao} / ${perguntasAtuais.length}`;
+            }
+        }
 
-    mostrarPergunta();
-    carregarRanking();
-  </script>
+        // Funções de salvamento e ranking (mantidas do seu código original)
+        function salvarPontuacao() {
+            let nome = document.getElementById('username').value || "Anônimo";
+            // Este fetch precisa de um backend PHP. Se você não tiver um, a função não funcionará.
+            fetch('salvar_pontuacao.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `nome=${encodeURIComponent(nome)}&pontuacao=${pontuacao}`
+            })
+            .then(() => carregarRanking());
+        }
+
+        function carregarRanking() {
+            // Este fetch também precisa de um backend PHP.
+            fetch('listar_ranking.php')
+            .then(res => res.json())
+            .then(dados => {
+                let lista = document.getElementById('ranking-list');
+                lista.innerHTML = '';
+                dados.forEach((item, i) => {
+                    let li = document.createElement('li');
+                    li.textContent = `${i + 1}. ${item.nome} - ${item.pontuacao} pts`;
+                    lista.appendChild(li);
+                });
+            })
+            .catch(error => {
+                console.error("Erro ao carregar ranking:", error);
+                document.getElementById('ranking').innerHTML = '<h3>Ranking:</h3><p>O ranking não está disponível no momento.</p>';
+            });
+        }
+        
+        carregarRanking();
+    </script>
 </body>
 </html>
