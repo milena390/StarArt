@@ -1,0 +1,102 @@
+[
+    {
+      "pergunta": "Quem pintou a Mona Lisa?",
+      "opcoes": ["Van Gogh", "Leonardo da Vinci", "Picasso", "Michelangelo"],
+      "resposta": "Leonardo da Vinci"
+    },
+    {
+      "pergunta": "Qual movimento artístico é conhecido por retratar sonhos e o subconsciente?",
+      "opcoes": ["Cubismo", "Surrealismo", "Impressionismo", "Barroco"],
+      "resposta": "Surrealismo"
+    },
+    {
+      "pergunta": "Qual artista é famoso por pintar girassóis?",
+      "opcoes": ["Van Gogh", "Monet", "Rembrandt", "Goya"],
+      "resposta": "Van Gogh"
+    },
+    {
+      "pergunta": "Qual técnica usa pequenos pontos para formar uma imagem?",
+      "opcoes": ["Pontilhismo", "Aquarela", "Grafite", "Óleo sobre tela"],
+      "resposta": "Pontilhismo"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por esculturas de mármore como 'Davi'?",
+      "opcoes": ["Michelangelo", "Donatello", "Rodin", "Bernini"],
+      "resposta": "Michelangelo"
+    },
+    {
+      "pergunta": "Qual movimento artístico veio após o Renascimento?",
+      "opcoes": ["Barroco", "Romantismo", "Cubismo", "Futurismo"],
+      "resposta": "Barroco"
+    },
+    {
+      "pergunta": "Qual pintor francês é famoso pelo quadro 'Impressão, nascer do sol'?",
+      "opcoes": ["Monet", "Degas", "Cézanne", "Renoir"],
+      "resposta": "Monet"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por suas obras com relógios derretendo?",
+      "opcoes": ["Dalí", "Kandinsky", "Pollock", "Warhol"],
+      "resposta": "Dalí"
+    },
+    {
+      "pergunta": "Qual técnica usa pigmentos dissolvidos em água?",
+      "opcoes": ["Aquarela", "Óleo", "Guache", "Tempera"],
+      "resposta": "Aquarela"
+    },
+    {
+      "pergunta": "Qual artista é famoso por retratar bailarinas?",
+      "opcoes": ["Degas", "Monet", "Van Gogh", "Picasso"],
+      "resposta": "Degas"
+    },
+    {
+      "pergunta": "Qual movimento artístico é conhecido por pinceladas rápidas e luz natural?",
+      "opcoes": ["Impressionismo", "Expressionismo", "Surrealismo", "Realismo"],
+      "resposta": "Impressionismo"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por retratos com fundo azul e rosa?",
+      "opcoes": ["Picasso", "Matisse", "Klee", "Miró"],
+      "resposta": "Picasso"
+    },
+    {
+      "pergunta": "Qual material é usado na escultura clássica?",
+      "opcoes": ["Mármore", "Plástico", "Vidro", "Madeira"],
+      "resposta": "Mármore"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por latas de sopa Campbell?",
+      "opcoes": ["Andy Warhol", "Roy Lichtenstein", "Basquiat", "Haring"],
+      "resposta": "Andy Warhol"
+    },
+    {
+      "pergunta": "Qual movimento artístico usa formas geométricas?",
+      "opcoes": ["Cubismo", "Surrealismo", "Romantismo", "Barroco"],
+      "resposta": "Cubismo"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por autorretratos com sobrancelhas marcantes?",
+      "opcoes": ["Frida Kahlo", "Georgia O'Keeffe", "Mary Cassatt", "Artemisia Gentileschi"],
+      "resposta": "Frida Kahlo"
+    },
+    {
+      "pergunta": "Qual técnica usa tinta espessa e textura?",
+      "opcoes": ["Impasto", "Aquarela", "Guache", "Pastel"],
+      "resposta": "Impasto"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por murais políticos no México?",
+      "opcoes": ["Diego Rivera", "Tamayo", "Siqueiros", "Orozco"],
+      "resposta": "Diego Rivera"
+    },
+    {
+      "pergunta": "Qual movimento artístico é anterior ao Modernismo?",
+      "opcoes": ["Romantismo", "Futurismo", "Pop Art", "Minimalismo"],
+      "resposta": "Romantismo"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por pinturas de lírios d'água?",
+      "opcoes": ["Monet", "Manet", "Degas", "Cézanne"],
+      "resposta": "Monet"
+    }
+  ]

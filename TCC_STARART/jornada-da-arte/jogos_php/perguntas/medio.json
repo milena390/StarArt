@@ -1,0 +1,102 @@
+[
+    {
+      "pergunta": "Qual artista é considerado o precursor do Cubismo?",
+      "opcoes": ["Picasso", "Braque", "Kandinsky", "Matisse"],
+      "resposta": "Braque"
+    },
+    {
+      "pergunta": "Qual movimento artístico surgiu como reação ao Impressionismo?",
+      "opcoes": ["Expressionismo", "Pós-Impressionismo", "Surrealismo", "Futurismo"],
+      "resposta": "Pós-Impressionismo"
+    },
+    {
+      "pergunta": "Qual artista pintou 'O Grito'?",
+      "opcoes": ["Edvard Munch", "Van Gogh", "Monet", "Cézanne"],
+      "resposta": "Edvard Munch"
+    },
+    {
+      "pergunta": "Qual técnica usa cera quente misturada com pigmentos?",
+      "opcoes": ["Encáustica", "Guache", "Pastel", "Aquarela"],
+      "resposta": "Encáustica"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por colagens e arte com papel recortado?",
+      "opcoes": ["Henri Matisse", "Paul Klee", "Miró", "Picasso"],
+      "resposta": "Henri Matisse"
+    },
+    {
+      "pergunta": "Qual movimento artístico enfatiza a emoção e a subjetividade?",
+      "opcoes": ["Expressionismo", "Realismo", "Neoclassicismo", "Minimalismo"],
+      "resposta": "Expressionismo"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por pinturas abstratas com formas geométricas?",
+      "opcoes": ["Kandinsky", "Mondrian", "Pollock", "Rothko"],
+      "resposta": "Mondrian"
+    },
+    {
+      "pergunta": "Qual pintor espanhol é famoso por obras surrealistas?",
+      "opcoes": ["Dalí", "Picasso", "Goya", "Velázquez"],
+      "resposta": "Dalí"
+    },
+    {
+      "pergunta": "Qual movimento artístico surgiu na Rússia e influenciou o design gráfico?",
+      "opcoes": ["Construtivismo", "Futurismo", "Dadaísmo", "Impressionismo"],
+      "resposta": "Construtivismo"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por pinturas com respingos de tinta?",
+      "opcoes": ["Jackson Pollock", "Mark Rothko", "Andy Warhol", "Basquiat"],
+      "resposta": "Jackson Pollock"
+    },
+    {
+      "pergunta": "Qual movimento artístico nasceu após a Primeira Guerra Mundial?",
+      "opcoes": ["Dadaísmo", "Cubismo", "Romantismo", "Barroco"],
+      "resposta": "Dadaísmo"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por obras com grandes campos de cor?",
+      "opcoes": ["Mark Rothko", "Pollock", "Klee", "Miró"],
+      "resposta": "Mark Rothko"
+    },
+    {
+      "pergunta": "Qual técnica envolve pintura em gesso fresco?",
+      "opcoes": ["Afresco", "Tempera", "Óleo", "Guache"],
+      "resposta": "Afresco"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por esculturas em bronze como 'O Pensador'?",
+      "opcoes": ["Rodin", "Bernini", "Donatello", "Michelangelo"],
+      "resposta": "Rodin"
+    },
+    {
+      "pergunta": "Qual movimento artístico é associado à Bauhaus?",
+      "opcoes": ["Modernismo", "Barroco", "Romantismo", "Surrealismo"],
+      "resposta": "Modernismo"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por obras com figuras distorcidas e cores intensas?",
+      "opcoes": ["Francis Bacon", "Picasso", "Van Gogh", "Matisse"],
+      "resposta": "Francis Bacon"
+    },
+    {
+      "pergunta": "Qual pintor italiano é famoso por afrescos na Capela Sistina?",
+      "opcoes": ["Michelangelo", "Raphael", "Caravaggio", "Botticelli"],
+      "resposta": "Michelangelo"
+    },
+    {
+      "pergunta": "Qual técnica usa pigmentos misturados com ovo?",
+      "opcoes": ["Tempera", "Óleo", "Guache", "Aquarela"],
+      "resposta": "Tempera"
+    },
+    {
+      "pergunta": "Qual artista é conhecido por obras com formas biomórficas?",
+      "opcoes": ["Joan Miró", "Klee", "Mondrian", "Pollock"],
+      "resposta": "Joan Miró"
+    },
+    {
+      "pergunta": "Qual movimento artístico é conhecido por arte funcional e design industrial?",
+      "opcoes": ["Bauhaus", "Pop Art", "Surrealismo", "Impressionismo"],
+      "resposta": "Bauhaus"
+    }
+  ]

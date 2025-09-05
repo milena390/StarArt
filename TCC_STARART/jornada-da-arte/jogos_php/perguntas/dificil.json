@@ -1,0 +1,102 @@
+[
+  {
+    "pergunta": "Qual artista renascentista escreveu tratados sobre proporção humana?",
+    "opcoes": ["Leonardo da Vinci", "Alberti", "Brunelleschi", "Raphael"],
+    "resposta": "Leonardo da Vinci"
+  },
+  {
+    "pergunta": "Qual artista barroco é conhecido por usar luz e sombra dramaticamente?",
+    "opcoes": ["Caravaggio", "Rembrandt", "Rubens", "Vermeer"],
+    "resposta": "Caravaggio"
+  },
+  {
+    "pergunta": "Qual artista criou o conceito de 'readymade'?",
+    "opcoes": ["Marcel Duchamp", "Andy Warhol", "Joseph Beuys", "Man Ray"],
+    "resposta": "Marcel Duchamp"
+  },
+  {
+    "pergunta": "Qual movimento artístico é associado à arte conceitual?",
+    "opcoes": ["Minimalismo", "Arte Povera", "Dadaísmo", "Expressionismo"],
+    "resposta": "Arte Povera"
+  },
+  {
+    "pergunta": "Qual artista é conhecido por instalações com espelhos e luz?",
+    "opcoes": ["Yayoi Kusama", "James Turrell", "Olafur Eliasson", "Dan Flavin"],
+    "resposta": "Olafur Eliasson"
+  },
+  {
+    "pergunta": "Qual técnica envolve pintura com areia, sangue ou materiais orgânicos?",
+    "opcoes": ["Arte Povera", "Assemblage", "Body Art", "Land Art"],
+    "resposta": "Arte Povera"
+  },
+  {
+    "pergunta": "Qual artista é conhecido por performances com o próprio corpo?",
+    "opcoes": ["Marina Abramović", "Joseph Beuys", "Chris Burden", "Yoko Ono"],
+    "resposta": "Marina Abramović"
+  },
+  {
+    "pergunta": "Qual artista é conhecido por obras com traços infantis e símbolos?",
+    "opcoes": ["Jean-Michel Basquiat", "Keith Haring", "Banksy", "Klee"],
+    "resposta": "Jean-Michel Basquiat"
+  },
+  {
+    "pergunta": "Qual movimento artístico é conhecido por rejeitar a estética tradicional?",
+    "opcoes": ["Dadaísmo", "Futurismo", "Romantismo", "Neoclassicismo"],
+    "resposta": "Dadaísmo"
+  },
+  {
+    "pergunta": "Qual artista é conhecido por esculturas gigantes infláveis?",
+    "opcoes": ["Jeff Koons", "Anish Kapoor", "Takashi Murakami", "Claes Oldenburg"],
+    "resposta": "Jeff Koons"
+  },
+  {
+    "pergunta": "Qual artista é conhecido por obras com pigmentos puros e monocromáticos?",
+    "opcoes": ["Yves Klein", "Rothko", "Pollock", "Kandinsky"],
+    "resposta": "Yves Klein"
+  },
+  {
+    "pergunta": "Qual artista é famoso por obras feitas com luz fluorescente?",
+    "opcoes": ["Dan Flavin", "James Turrell", "Jenny Holzer", "Bruce Nauman"],
+    "resposta": "Dan Flavin"
+  },
+  {
+    "pergunta": "Qual artista é conhecido por arte em paisagens naturais?",
+    "opcoes": ["Robert Smithson", "Andy Goldsworthy", "Christo", "Walter De Maria"],
+    "resposta": "Robert Smithson"
+  },
+  {
+    "pergunta": "Qual artista é conhecido por envolver edifícios com tecido?",
+    "opcoes": ["Christo", "Olafur Eliasson", "Anish Kapoor", "Koons"],
+    "resposta": "Christo"
+  },
+  {
+    "pergunta": "Quem é considerado o pai da pop art, conhecido por suas obras com latas de sopa e serigrafias de celebridades?",
+    "opcoes": ["Andy Warhol", "Roy Lichtenstein", "Jasper Johns", "Claes Oldenburg"],
+    "resposta": "Andy Warhol"
+  },
+  {
+    "pergunta": "Qual artista surrealista é famoso por 'A Persistência da Memória', com relógios derretidos?",
+    "opcoes": ["Salvador Dalí", "René Magritte", "Joan Miró", "Frida Kahlo"],
+    "resposta": "Salvador Dalí"
+  },
+  {
+    "pergunta": "Qual escultor é conhecido por suas figuras longilíneas e alongadas de bronze, como 'O Homem Caminhando'?",
+    "opcoes": ["Alberto Giacometti", "Henry Moore", "Auguste Rodin", "Constantin Brâncuși"],
+    "resposta": "Alberto Giacometti"
+  },
+  {
+    "pergunta": "Qual artista holandês do século XVII é mestre do chiaroscuro e famoso por 'A Ronda Noturna'?",
+    "opcoes": ["Rembrandt van Rijn", "Johannes Vermeer", "Frans Hals", "Pieter de Hooch"],
+    "resposta": "Rembrandt van Rijn"
+  },
+  {
+    "pergunta": "Qual pintor impressionista é conhecido por suas séries de nenúfares e jardins?",
+    "opcoes": ["Claude Monet", "Édouard Manet", "Pierre-Auguste Renoir", "Camille Pissarro"],
+    "resposta": "Claude Monet"
+  },
+  {
+    "pergunta": "Qual escultora britânica é famosa por suas obras monumentais em aço, frequentemente associadas a formas orgânicas e femininas?",
+    "opcoes": ["Barbara Hepworth", "Louise Bourgeois", "Magdalena Abakanowicz", "Rachel Whiteread"],
+    "resposta": "Barbara Hepworth"
+  }
+]

@@ -1,0 +1,287 @@
+/* Fonte principal */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.6;
+  background-color: #0A192F;
+  color: #E0E0E0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme {
+  background-color: #dbeeff;
+  color: #0A192F;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background-color: #0A192F;
+  padding: 15px 0;
+  border-bottom: 1px solid #D4AF37;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.light-theme header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #D4AF37;
+}
+
+.logo h1, .logo-text {
+  font-size: 24px;
+  color: #D4AF37;
+  font-weight: bold;
+}
+
+/* Navegação */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+nav ul li a, nav a {
+  text-decoration: none;
+  color: #E0E0E0;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+body.light-theme nav a {
+  color: #0A192F;
+}
+
+nav a:hover,
+nav a.active {
+  color: #D4AF37;
+  border-bottom: 2px solid #D4AF37;
+  padding-bottom: 3px;
+}
+
+/* Botão alternar tema */
+.theme-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #D4AF37;
+  border: none;
+  border-radius: 50%;
+  padding: 0.6rem 0.75rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 0 8px #D4AF37;
+  color: #0A192F;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to bottom right, #0A192F, #112B50);
+  text-align: center;
+  padding: 5rem 2rem;
+  transition: background 0.3s ease;
+}
+
+body.light-theme .hero {
+  background: linear-gradient(to bottom right, #dbeeff, #c9e1ff);
+}
+
+.hero h2, .hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #D4AF37;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: inherit;
+}
+
+/* Art Movement Sections */
+.art-movement {
+  background-color: #112B50;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  max-width: 900px;
+  transition: background-color 0.3s ease;
+}
+
+body.light-theme .art-movement {
+  background-color: #fff;
+}
+
+.art-movement h3 {
+  font-size: 28px;
+  color: #D4AF37;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.movement-details {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.movement-details .description {
+  flex: 2;
+}
+
+.movement-details .description p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: inherit;
+}
+
+.movement-details .description h4 {
+  font-size: 18px;
+  color: #D4AF37;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.movement-details .description ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.movement-details .description ul li {
+  margin-bottom: 5px;
+}
+
+.notable-artists {
+  flex: 1;
+  background-color: #FDF5E6;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #F0E6D2;
+}
+
+.notable-artists h4 {
+  font-size: 18px;
+  color: #5C4033;
+  margin-bottom: 10px;
+}
+
+.notable-artists ul {
+  list-style: none;
+  color: #5C4033;
+}
+
+.notable-artists ul li {
+  margin-bottom: 5px;
+  padding-left: 15px;
+  position: relative;
+}
+
+.notable-artists ul li::before {
+  content: '•';
+  color: #5C4033;
+  position: absolute;
+  left: 0;
+}
+
+/* Footer */
+footer {
+  background-color: #0A192F;
+  color: #E0E0E0;
+  padding: 30px 0;
+  margin-top: 40px;
+  border-top: 1px solid #D4AF37;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme footer {
+  background-color: #5C4033;
+  color: #ffffff;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-info h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.footer-info p {
+  font-size: 14px;
+  color: inherit;
+}
+
+.footer-social a {
+  color: inherit;
+  font-size: 20px;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+  color: #D4AF37;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 13px;
+  color: #ccc;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .movement-details {
+    flex-direction: column;
+  }
+
+  .notable-artists {
+    width: 100%;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}

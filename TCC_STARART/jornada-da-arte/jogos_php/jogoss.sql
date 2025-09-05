@@ -1,0 +1,1 @@
+SELECT * FROM jogos.pontuacoes_quiz;
