@@ -1,357 +1,239 @@
-/* Fonte principal */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+/* =============== Fonte =============== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 
-/* Estilos gerais do corpo */
-body {
-  margin: 0;
-  font-family: 'Playfair Display', serif;
-  background-color: #0A192F; /* fundo azul escuro */
-  color: #E0E0E0; /* texto cinza claro */
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* =============== Tokens / Tema =============== */
+:root {
+  --bg: #0A192F;
+  --bg-2: #112B50;
+  --text: #E0E0E0;
+  --muted: #C9D1D9;
+  --accent: #D4AF37;
+  --accent-600: #b8942e;
+  --shadow: rgba(0,0,0,0.4);
+
+  --radius: 12px;
+
+  --h1: clamp(2.2rem, 2.6vw + 1.2rem, 3rem);
+  --p: clamp(1rem, 0.5vw + 0.9rem, 1.15rem);
 }
 
 body.light-theme {
-  background-color: #dbeeff; /* azul bebê suave */
-  color: #0A192F; /* texto azul escuro */
+  --bg: #dbeeff;
+  --bg-2: #f3f7ff;
+  --text: #0A192F;
+  --muted: #445;
+  --accent: #D4AF37;
+  --accent-600: #b8942e;
+  --shadow: rgba(10,25,47,0.15);
 }
 
-/* Botão de alternar tema */
+/* =============== Base =============== */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color .3s ease, color .3s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { max-width: 100%; display: block; }
+
+/* Acessibilidade */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+/* =============== Botão de tema =============== */
 .theme-toggle {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  background-color: #D4AF37; /* dourado */
+  background: var(--accent);
+  color: #0A192F;
   border: none;
-  border-radius: 50%;
-  padding: 0.6rem 0.75rem;
-  font-size: 1.5rem;
+  border-radius: 999px;
+  width: 52px; height: 52px;
+  display: grid; place-items: center;
+  font-size: 1.4rem;
   cursor: pointer;
   z-index: 9999;
-  box-shadow: 0 0 8px #D4AF37;
-  color: #0A192F;
+  box-shadow: 0 0 12px var(--accent);
   user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color .3s ease, transform .2s ease;
 }
+.theme-toggle:hover { background: var(--accent-600); transform: translateY(-2px); }
+.theme-toggle:active { transform: translateY(0); }
 
-.theme-toggle:hover {
-  background-color: #b8942e; /* dourado escuro */
-}
-
-/* Títulos */
+/* =============== Tipografia =============== */
 h1, h2, h3, h4 {
+  margin: 0 0 .6rem 0;
   font-weight: 700;
-  font-family: 'Playfair Display', serif;
-  margin-top: 0;
   color: inherit;
 }
-
-/* Parágrafos */
 p {
-  font-size: 1.2rem;
-  line-height: 1.5;
+  margin: 0 0 1rem 0;
+  font-size: var(--p);
+  line-height: 1.6;
+  max-width: 70ch;
   color: inherit;
-  max-width: 600px;
 }
 
-/* Links */
+/* =============== Links & Botões =============== */
 a {
-  color: #D4AF37; /* dourado */
+  color: var(--accent);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color .25s ease;
 }
+a:hover { text-decoration: underline; }
 
-body.light-theme a {
-  color: #D4AF37;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Botões */
 .btn, a.button-link {
-  background-color: #D4AF37;
+  background: var(--accent);
   color: #0A192F;
   border: none;
-  padding: 0.8rem 1.5rem;
+  padding: .9rem 1.35rem;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: calc(var(--radius) - 4px);
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  text-align: center;
   display: inline-block;
-  text-decoration: none;
+  transition: background-color .25s ease, transform .2s ease, box-shadow .25s ease;
+  box-shadow: 0 6px 16px var(--shadow);
 }
+.btn:hover, a.button-link:hover { background: var(--accent-600); transform: translateY(-2px); }
+.btn:active, a.button-link:active { transform: translateY(0); }
 
-.btn:hover, a.button-link:hover {
-  background-color: #b8942e;
-  transform: scale(1.05);
-}
-
-body.light-theme .btn, body.light-theme a.button-link {
-  background-color: #D4AF37;
-  color: #0A192F;
-}
-
-body.light-theme .btn:hover, body.light-theme a.button-link:hover {
-  background-color: #b8942e;
-}
-
-/* Header */
+/* =============== Header =============== */
 header {
-  background-color: #0A192F;
+  position: sticky; top: 0; z-index: 1000;
+  background: var(--bg);
+  border-bottom: 1px solid var(--accent);
+  box-shadow: 0 4px 10px var(--shadow);
   padding: 1rem 2rem;
-  border-bottom: 1px solid #D4AF37;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
 }
 
-body.light-theme header {
-  background-color: #dbeeff; /* azul bebê */
-  border-bottom-color: #D4AF37; /* dourado */
-}
-
-/* Logo */
 .logo-text {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #D4AF37;
-  transition: color 0.3s ease;
-}
-
-body.light-theme .logo-text {
-  color: #D4AF37;
+  font-size: 1.8rem; font-weight: 700; color: var(--accent);
 }
 
 /* Navegação */
+nav { display: flex; gap: 20px; }
 nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  font-family: 'Playfair Display', serif;
-  color: #E0E0E0;
-  transition: color 0.3s ease;
-  font-size: 1rem;
+  color: var(--text);
+  padding-bottom: 3px;
+  transition: color .25s ease, border-color .25s ease;
 }
-
-body.light-theme nav a {
-  color: #0A192F;
-}
-
 nav a:hover,
 nav a.active {
-  color: #D4AF37;
-  border-bottom: 2px solid #D4AF37;
-  padding-bottom: 3px;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
 }
 
-body.light-theme nav a:hover,
-body.light-theme nav a.active {
-  color: #D4AF37;
-  border-bottom-color: #D4AF37;
-}
-
-/* Hero */
+/* =============== Hero =============== */
 .hero {
-  background: linear-gradient(to bottom right, #0A192F, #112B50);
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg-2) 100%);
   text-align: center;
   padding: 5rem 2rem;
-  transition: background 0.3s ease;
-  font-family: "Georgia", serif;
 }
+.hero h1 { font-size: var(--h1); color: var(--accent); }
+.hero p  { color: var(--muted); margin-inline: auto; }
 
-body.light-theme .hero {
-  background: linear-gradient(to bottom right, #dbeeff, #c9e1ff);
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #D4AF37;
-}
-
-body.light-theme .hero h1 {
-  color: #0A192F;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #E0E0E0;
-}
-
-body.light-theme .hero p {
-  color: #555555;
-}
-
-/* Container dos cards */
+/* =============== Cards =============== */
 .cards {
-  display: flex;
+  display: flex; flex-wrap: wrap;
+  gap: 22px;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 0 1rem;
+  padding: 2rem 1rem 3rem;
 }
 
-/* Estilo de cada card */
 .card-box {
-  background-color: #112B50;
-  width: 280px;
+  background: var(--bg-2);
+  color: var(--text);
+  width: min(320px, 92vw);
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  transition: transform 0.2s, background-color 0.3s ease;
-  color: #E0E0E0;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 22px var(--shadow);
+  transition: transform .2s ease, box-shadow .3s ease, background-color .3s ease;
 }
+.card-box:hover { transform: translateY(-6px); box-shadow: 0 12px 28px var(--shadow); }
 
-.card-box:hover {
-  transform: translateY(-5px);
-  background-color: #0A192F;
-}
+.card-box .icon { font-size: 2.4rem; color: var(--accent); margin-bottom: 14px; }
+.card-box h3 { color: var(--accent); margin-bottom: 8px; font-size: 1.15rem; }
+.card-box p { color: var(--muted); font-size: .98rem; margin-bottom: 14px; }
+.card-box a { color: var(--accent); font-weight: 700; font-size: .98rem; }
 
-body.light-theme .card-box {
-  background-color: #F5F5F5;
-  color: #0A192F;
-}
-
-body.light-theme .card-box:hover {
-  background-color: #e0e0e0;
-}
-
-/* Ícones nos cards */
-.card-box .icon {
-  font-size: 2.5rem;
-  color: #D4AF37;
-  margin-bottom: 15px;
-}
-
-/* Títulos dos cards */
-.card-box h3 {
-  color: #D4AF37;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-/* Texto dos cards */
-.card-box p {
-  color: #E0E0E0;
-  font-size: 0.95rem;
-  margin-bottom: 15px;
-}
-
-body.light-theme .card-box p {
-  color: #444444;
-}
-
-/* Links dos cards */
-.card-box a {
-  color: #D4AF37;
-  font-weight: bold;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.card-box a:hover {
-  text-decoration: underline;
-}
-
-
-/* Footer */
+/* =============== Footer =============== */
 footer {
-  background-color: #0A192F;
+  background: var(--bg);
+  color: var(--text);
   text-align: center;
-  padding: 1rem 2rem; /* menos espaçamento vertical */
-  font-size: 0.9rem;
-  color: #E0E0E0;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-top: 1px solid transparent;
+  padding: 1.5rem 2rem;
+  font-size: .95rem;
+  border-top: 3px solid var(--accent);
 }
 
-body.light-theme footer {
-  background-color: #dbeeff; /* azul bebê */
-  color: #0A192F;
-  border-top: 3px solid #D4AF37; /* borda dourada mais grossa */
-  padding-top: 1.2rem;  /* menor espaçamento */
-  padding-bottom: 1rem;
-}
-
-
-body.light-theme footer {
-  background-color: #dbeeff; /* azul bebê */
-  color: #0A192F;
-  border-top: 3px solid #D4AF37; /* borda dourada mais grossa */
-  padding-top: 2.5rem; /* mais espaçamento */
-  padding-bottom: 2rem;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  nav {
-    margin-top: 1rem;
-  }
-  nav a {
-    display: block;
-    margin: 0.5rem 0;
-  }
-  .cards {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* Animação da intro */
+/* =============== Intro (logo de entrada) =============== */
 .intro {
   position: fixed;
-  width: 100%;
-  height: 100vh;
-  background-color: #0A192F;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  inset: 0;
+  background: var(--bg);
+  display: grid; place-items: center;
   z-index: 1100;
-  transition: all 1s ease-in-out;
-}
-
-body.light-theme .intro {
-  background-color: #dbeeff;
-}
-
-.intro-logo {
-  width: 150px;
-  transition: all 1s ease;
-}
-
-.welcome-message {
-  color: #D4AF37;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  margin-top: 1rem;
   transition: opacity 1s ease;
 }
 
-body.light-theme .welcome-message {
-  color: #D4AF37;
+.intro-inner {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 1rem;
+  transform: translateZ(0);
 }
 
+.intro-logo {
+  width: 160px;
+  will-change: transform, opacity;
+  animation: intro-pop .8s ease both;
+}
+
+.welcome-message {
+  color: var(--accent);
+  font-size: 1.4rem;
+  opacity: .95;
+  transition: opacity 1s ease;
+}
+
+/* estado final após JS adicionar .move-logo */
 .intro.move-logo .intro-logo {
-  width: 50px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  width: 60px;
+  position: absolute; top: 20px; left: 20px;
+  transition: width 1s ease, top 1s ease, left 1s ease;
+}
+.intro.move-logo .welcome-message { opacity: 0; }
+
+/* animação inicial da logo */
+@keyframes intro-pop {
+  0%   { transform: scale(.85); opacity: 0; }
+  60%  { transform: scale(1.04); opacity: 1; }
+  100% { transform: scale(1); }
 }
 
-.intro.move-logo .welcome-message {
-  opacity: 0;
+/* Respeita usuários com redução de movimento */
+@media (prefers-reduced-motion: reduce) {
+  .intro, .intro-logo, .welcome-message, .theme-toggle,
+  .card-box, .btn, a.button-link {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* =============== Responsividade =============== */
+@media (max-width: 768px) {
+  header { flex-direction: column; align-items: flex-start; gap: .75rem; }
+  nav { gap: 12px; }
+  .hero { padding: 3.5rem 1.25rem; }
 }
