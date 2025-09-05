@@ -12,7 +12,7 @@
 
   <!-- Intro com logo e mensagem -->
   <div class="intro" id="intro">
-    <img src="img/logo.png" alt="Logo StarArt" class="intro-logo" id="logo" />
+    <img src="../img/logo.png" alt="Logo StarArt" class="intro-logo" id="logo" />
     <h1 class="welcome-message" id="welcome">Seja bem-vindo ao StarArt!</h1>
   </div>
 
@@ -27,7 +27,7 @@
     <span class="logo-text">StarArt</span>
   </div>
   <nav>
-    <a href="index.html" class="active">Início</a>
+    <a href="#" class="active">Início</a>
     <a href="historia.html">História</a>
     <a href="movimentos.html">Movimentos</a>
     <a href="../jogos_php/index.php">Jogos</a>
@@ -78,25 +78,33 @@
     </p>
   </footer>
 
-<script>
-window.onload = () => {
-  const intro = document.getElementById('intro');
-  const introShown = localStorage.getItem('introShown');
-
-  if (!introShown) {
-    setTimeout(() => { intro.classList.add('move-logo'); }, 2000);
-    setTimeout(() => {
-      intro.style.opacity = '0';
-      intro.style.pointerEvents = 'none';
-      document.body.style.overflow = 'auto';
-      localStorage.setItem('introShown', 'true');
-    }, 3500);
-  } else {
-    intro.style.opacity = '0';
-    intro.style.pointerEvents = 'none';
-    document.body.style.overflow = 'auto';
-  }
-};
-</script>
+  <script>
+    window.onload = () => {
+      const intro = document.getElementById('intro');
+      const introShown = sessionStorage.getItem('introShown'); // muda para sessionStorage
+    
+      if (!introShown) {
+        // Primeira vez que entra nessa página
+        setTimeout(() => { intro.classList.add('move-logo'); }, 3000); // aumenta o tempo inicial
+        setTimeout(() => {
+          intro.style.opacity = '0';
+          intro.style.pointerEvents = 'none';
+          document.body.style.overflow = 'auto';
+          sessionStorage.setItem('introShown', 'true'); // marca como já mostrado
+    
+          // remove do DOM depois do fade
+          setTimeout(() => {
+            intro.remove();
+          }, 1500);
+        }, 5000); // mantém a logo visível por mais tempo
+      } else {
+        // Já entrou nessa página, não mostra de novo
+        intro.remove();
+        document.body.style.overflow = 'auto';
+      }
+    };
+    </script>
+    
+    
 </body>
 </html>
