@@ -90,9 +90,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const imagePaths = [
         'memoria/tarsila.png','memoria/noite.png','memoria/harmonia.png',
         'memoria/cuca.png','memoria/claude.png','memoria/cafe.png',
-        'img/vaca.png','img/porco.png','img/galinha.png','img/polvo.png',
-        'img/leao.png','img/tartaruga.png','img/cavalo.png','img/pinguim.png',
-        'img/unicornio.png'
+        'memoria/tempo.png','memoria/beijo.png','memoria/abaporu.png','memoria/cachorro.png',
+        'memoria/mona.png','memoria/mulher.png','memoria/cavalo.png','memoria/pinguim.png',
+        'memoria/unicornio.png'
     ];
 
     let cardsArray = [];
