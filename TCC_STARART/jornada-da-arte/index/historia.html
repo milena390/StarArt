@@ -7,13 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+     <!-- CSS Global -->
+  <link rel="stylesheet" href="../css/styleglobal.css">
+
+  <!-- Font Awesome (padrão para todas as páginas) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /*
-        * CSS para os dois temas: escuro e claro
-        */
         body {
-            background-color: #0a192f; /* Fundo escuro */
-            color: #e0e0e0; /* Texto claro */
+            background-color: #0a192f;
+            color: #e0e0e0;
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             transition: background-color 0.3s ease, color 0.3s ease;
@@ -22,37 +24,34 @@
         }
 
         body.light-theme {
-            background-color: #e6f2ff; /* Azul pastel para o fundo */
-            color: #2c3e50; /* Texto mais escuro no tema claro */
+            background-color: #e6f2ff;
+            color: #2c3e50;
         }
 
-        /* Classes de cores para trocar entre os temas */
-        .theme-bg { background-color: #1d2a4d; } /* Fundo dos cards no tema escuro */
-        .theme-bg.light-theme { background-color: #f8faff; } /* Fundo dos cards no tema claro (ainda mais pastel) */
+        .theme-bg { background-color: #1d2a4d; }
+        .theme-bg.light-theme { background-color: #f8faff; }
 
-        .theme-accent { color: #D4AF37; } /* Destaque no tema escuro (ouro) */
-        .theme-accent.light-theme { color: #6a8eab; } /* Azul pastel de destaque no tema claro */
+        .theme-accent { color: #D4AF37; }
+        .theme-accent.light-theme { color: #6a8eab; }
 
-        .theme-accent-bg { background-color: #D4AF37; } /* Fundo de destaque no tema escuro */
-        .theme-accent-bg.light-theme { background-color: #9cbdd7; } /* Azul pastel de fundo de destaque no tema claro */
+        .theme-accent-bg { background-color: #D4AF37; }
+        .theme-accent-bg.light-theme { background-color: #9cbdd7; }
 
-        .theme-accent-border { border-bottom: 1px solid #D4AF37; } /* Borda de destaque no tema escuro */
-        .theme-accent-border.light-theme { border-bottom: 1px solid #6a8eab; } /* Borda de destaque azul pastel no tema claro */
+        .theme-accent-border { border-bottom: 1px solid #D4AF37; }
+        .theme-accent-border.light-theme { border-bottom: 1px solid #6a8eab; }
 
-        /* Estilos gerais */
         * { box-sizing: border-box; }
         img { max-width: 100%; display: block; }
-        
+
         :focus-visible {
             outline: 3px solid #D4AF37;
             outline-offset: 3px;
             border-radius: 8px;
         }
         body.light-theme :focus-visible {
-            outline: 3px solid #6a8eab; /* Azul pastel para o outline */
+            outline: 3px solid #6a8eab;
         }
 
-        /* Botão de tema */
         .theme-toggle {
             position: fixed;
             bottom: 2rem;
@@ -70,26 +69,29 @@
             user-select: none;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
         }
-        .theme-toggle.light-theme { box-shadow: 0 0 12px #9cbdd7; } /* Sombra azul pastel */
+        .theme-toggle.light-theme { box-shadow: 0 0 12px #9cbdd7; }
         .theme-toggle:hover { transform: scale(1.1); }
 
-        /* Header */
+        /* ===== HEADER ===== */
         header {
+            position: relative; /* não fixo */
+            background: #0A192F;
+            border-bottom: 1px solid #D4AF37;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
             padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            height: 135px;
         }
-        .logo-container { display: flex; align-items: center; }
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: bold;
+
+        .logo img {
+            height: 150px;
+            width: auto;
+            display: block;
         }
+
         nav a {
             margin-left: 20px;
             text-decoration: none;
@@ -103,7 +105,6 @@
             padding-bottom: 3px;
         }
 
-        /* Main content */
         main {
             max-width: 800px;
             margin: 40px auto;
@@ -116,7 +117,6 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Cards */
         .card {
             padding: 20px;
             border-radius: 10px;
@@ -125,7 +125,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
         }
         .card.light-theme {
-             box-shadow: 0 4px 6px rgba(10, 25, 47, 0.15); /* Sombra mais suave para o tema claro */
+             box-shadow: 0 4px 6px rgba(10, 25, 47, 0.15);
         }
         .circle {
             width: 30px;
@@ -158,150 +158,75 @@
             font-size: 0.95rem;
         }
 
-        /* Curiosities section */
-        .curiosities {
-            margin-top: 80px;
-            padding: 40px;
-            border-radius: 10px;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-        }
-        .curiosities.light-theme {
-            box-shadow: 0 6px 12px rgba(10, 25, 47, 0.15); /* Sombra mais suave */
-        }
-        .curiosity {
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .curiosity:last-child { border-bottom: none; }
-        .curiosity h3 {
-            font-size: 22px;
-            font-family: 'Poppins', sans-serif;
-            margin-bottom: 10px;
-        }
-        .curiosity p {
-            font-size: 17px;
-            line-height: 1.7;
-        }
-
-        /* Footer */
         footer {
-            background-color: #b8942e; /* Destaque escuro do footer */
+            background-color: #b8942e;
             color: #fff8e5;
             padding: 30px 20px 10px;
-            font-family: 'Poppins', sans-serif;
             text-align: center;
         }
-        body.light-theme footer { background-color: #6a8eab; } /* Azul pastel para o footer */
-        .footer-content {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            max-width: 1000px;
-            margin: 0 auto;
-            align-items: center;
-        }
-        .footer-right a {
-            margin: 0 10px;
-            font-size: 1.5rem;
-            text-decoration: none;
-            color: #fff8e5;
-            transition: transform 0.2s;
-        }
-        .footer-right a:hover { transform: scale(1.2); }
+        body.light-theme footer { background-color: #6a8eab; }
     </style>
 </head>
 <body>
     <header class="theme-bg theme-accent-border">
         <div class="logo-container">
-            <span class="logo-text theme-accent">StarArt</span>
+            <a href="index.html" class="logo">
+                <img src="im/logotipo.png" alt="Logotipo do Site">
+            </a>
         </div>
-        <nav>
-            <a href="index.html" class="theme-accent">Início</a>
-            <a href="#">Jornada</a>
-            <a href="../autor/autores.html">Autores</a>
-            <a href="../jogos_php/index.php">Quiz</a>
-            <a href="../contatostar/contatos.html">Contato</a>
-        </nav>
-    </header>
+       <nav>
+    <a href="index.html" class="active">Início</a>
+    <a href="#">História</a>
+    <a href="movimentos.html">Movimentos</a>
+    <a href="../jogos_php/index.php">Jogos</a>
+    <a href="../autor/autores.html">Autores</a>
+    <a href="../contatostar/contatos.html">Contato</a>
+  </nav>
+</header>
 
-    <main>
-        <h2 class="theme-text">História da Arte</h2>
-        <section class="card theme-bg">
-            <div class="circle theme-accent-bg theme-accent">1</div>
-            <h3>Arte Pré-Histórica</h3>
-            <p>As primeiras manifestações artísticas da humanidade surgiram há cerca de 40.000 anos, com pinturas rupestres em cavernas. Estas obras primitivas retratavam principalmente animais e cenas de caça, usando pigmentos naturais.</p>
-            <div class="highlight theme-accent-bg theme-text">Obras importantes: Pinturas de Lascaux (França) e Altamira (Espanha)</div>
-        </section>
 
-        <section class="card theme-bg">
-            <div class="circle theme-accent-bg theme-accent">2</div>
-            <h3>Arte Antiga</h3>
-            <p>As civilizações do Egito, Mesopotâmia, Grécia e Roma desenvolveram estilos artísticos sofisticados. A arte egípcia era simbólica e ritualística, enquanto os gregos buscavam a perfeição e harmonia nas proporções.</p>
-            <div class="highlight theme-accent-bg theme-text">Obras importantes: Pirâmides de Gizé, Partenon, Coliseu Romano</div>
-        </section>
-
-        <section class="card theme-bg">
-            <div class="circle theme-accent-bg theme-accent">3</div>
-            <h3>Arte Medieval</h3>
-            <p>Durante a Idade Média (séculos V-XV), a arte esteve fortemente ligada à religião. Os estilos Românico e Gótico dominaram a arquitetura, enquanto a pintura e escultura serviam principalmente para educar os fiéis sobre histórias bíblicas.</p>
-            <div class="highlight theme-accent-bg theme-text">Obras importantes: Catedral de Notre-Dame, iluminuras medievais, tapeçaria de Bayeux</div>
-        </section>
-
-        <section class="card theme-bg">
-            <div class="circle theme-accent-bg theme-accent">4</div>
-            <h3>Renascimento</h3>
-            <p>O Renascimento (séculos XIV-XVII) marcou o retorno aos ideais clássicos greco-romanos. Artistas como Leonardo da Vinci e Michelangelo revolucionaram a arte com técnicas de perspectiva, anatomia e um novo foco no humanismo.</p>
-            <div class="highlight theme-accent-bg theme-text">Obras importantes: Mona Lisa, Capela Sistina, O Nascimento de Vênus</div>
-        </section>
-
-        <section class="card theme-bg">
-            <div class="circle theme-accent-bg theme-accent">5</div>
-            <h3>Arte Moderna e Contemporânea</h3>
-            <p>A partir do século XIX, movimentos como Impressionismo, Cubismo, Surrealismo e Expressionismo romperam com tradições anteriores. No século XX, a arte tornou-se cada vez mais experimental, com o surgimento da arte abstrata, pop art e arte conceitual.</p>
-            <div class="highlight theme-accent-bg theme-text">Obras importantes: Noite Estrelada (Van Gogh), Guernica (Picasso), Campbell's Soup Cans (Warhol)</div>
-        </section>
-    </main>
-
+   <main> <h2 class="theme-text">História da Arte</h2>
+     <section class="card theme-bg">
+         <div class="circle theme-accent-bg theme-accent">1</div> 
+         <h3>Arte Pré-Histórica</h3> 
+         <p>As primeiras manifestações artísticas da humanidade surgiram há cerca de 40.000 anos, com pinturas rupestres em cavernas. Estas obras primitivas retratavam principalmente animais e cenas de caça, usando pigmentos naturais.</p> 
+         
+         <div class="highlight theme-accent-bg theme-text">Obras importantes: Pinturas de Lascaux (França) e Altamira (Espanha)</div>
+         </section> 
+         <section class="card theme-bg"> <div class="circle theme-accent-bg theme-accent">2</div> <h3>Arte Antiga</h3>
+             <p>As civilizações do Egito, Mesopotâmia, Grécia e Roma desenvolveram estilos artísticos sofisticados. A arte egípcia era simbólica e ritualística, enquanto os gregos buscavam a perfeição e harmonia nas proporções.</p>
+             <div class="highlight theme-accent-bg theme-text">Obras importantes: Pirâmides de Gizé, Partenon, Coliseu Romano</div> 
+            </section>
+             <section class="card theme-bg"> <div class="circle theme-accent-bg theme-accent">3</div> <h3>Arte Medieval</h3> 
+                <p>Durante a Idade Média (séculos V-XV), a arte esteve fortemente ligada à religião. Os estilos Românico e Gótico dominaram a arquitetura, enquanto a pintura e escultura serviam principalmente para educar os fiéis sobre histórias bíblicas.</p> 
+                <div class="highlight theme-accent-bg theme-text">Obras importantes: Catedral de Notre-Dame, iluminuras medievais, tapeçaria de Bayeux</div>
+             </section>
+              <section class="card theme-bg"> <div class="circle theme-accent-bg theme-accent">4</div> <h3>Renascimento</h3>
+                 <p>O Renascimento (séculos XIV-XVII) marcou o retorno aos ideais clássicos greco-romanos. Artistas como Leonardo da Vinci e Michelangelo revolucionaram a arte com técnicas de perspectiva, anatomia e um novo foco no humanismo.</p>
+                  <div class="highlight theme-accent-bg theme-text">Obras importantes: Mona Lisa, Capela Sistina, O Nascimento de Vênus</div>
+                 </section>
+                  <section class="card theme-bg"> <div class="circle theme-accent-bg theme-accent">5</div>
+                     <h3>Arte Moderna e Contemporânea</h3>
+                      <p>A partir do século XIX, movimentos como Impressionismo, Cubismo, Surrealismo e Expressionismo romperam com tradições anteriores. No século XX, a arte tornou-se cada vez mais experimental, com o surgimento da arte abstrata, pop art e arte conceitual.</p>
+                       <div class="highlight theme-accent-bg theme-text">Obras importantes: Noite Estrelada (Van Gogh), Guernica (Picasso), Campbell's Soup Cans (Warhol)</div> </section> </main>
     <footer>
         <p>&copy; 2025 StarArt – Todos os direitos reservados.</p>
     </footer>
 
-    <button id="theme-toggle" class="theme-toggle theme-accent-bg theme-accent" aria-label="Toggle dark and light theme">
-        🌙
-    </button>
-    
+    <button id="theme-toggle" class="theme-toggle theme-accent-bg theme-accent" aria-label="Toggle dark and light theme">🌙</button>
+
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
-        // Seleciona todos os elementos que têm as classes de tema para alternar
         const themeElements = document.querySelectorAll(
-            '.theme-bg, .theme-accent, .theme-accent-bg, .theme-accent-border, ' +
-            '.theme-toggle, .card, .curiosities, :focus-visible' // Adicionado :focus-visible para alternar o outline
+            '.theme-bg, .theme-accent, .theme-accent-bg, .theme-accent-border, .theme-toggle, .card'
         );
 
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('light-theme');
-            themeElements.forEach(el => {
-                // A classe 'theme-toggle' precisa de um tratamento especial para a sombra
-                if (el.classList.contains('theme-toggle')) {
-                    el.classList.toggle('light-theme');
-                } else if (el.tagName === 'A' && el.closest('nav')) { // Links da navegação
-                    // Para links na navegação, apenas a cor do texto deve alternar
-                    // e a borda inferior. As classes 'theme-accent' e 'theme-accent-border' já cuidam disso.
-                } else {
-                    el.classList.toggle('light-theme');
-                }
-            });
+            themeElements.forEach(el => el.classList.toggle('light-theme'));
 
-            if (body.classList.contains('light-theme')) {
-                themeToggle.textContent = '☀️';
-            } else {
-                themeToggle.textContent = '🌙';
-            }
+            themeToggle.textContent = body.classList.contains('light-theme') ? '☀️' : '🌙';
         });
     </script>
 </body>

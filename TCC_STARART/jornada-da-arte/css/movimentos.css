@@ -1,24 +1,50 @@
-/* Fonte principal */
+/* ==================== Fonte ==================== */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 
-/* Reset básico */
+/* ==================== Reset ==================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Playfair Display', serif;
-  line-height: 1.6;
-  background-color: #0A192F;
-  color: #E0E0E0;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* ==================== Variáveis ==================== */
+:root {
+  --bg: #0A192F;
+  --bg-2: #112B50;
+  --text: #E0E0E0;
+  --muted: #C9D1D9;
+  --accent: #D4AF37;
+  --accent-600: #b8942e;
+  --shadow: rgba(0,0,0,0.4);
+
+  --brown: #5C4033;
+  --cream: #FDF5E6;
+  --cream-border: #F0E6D2;
+
+  --radius: 12px;
+
+  --h1: clamp(2.2rem, 2.6vw + 1.2rem, 3rem);
+  --p: clamp(1rem, 0.5vw + 0.9rem, 1.15rem);
 }
 
 body.light-theme {
-  background-color: #dbeeff;
-  color: #0A192F;
+  --bg: #dbeeff;
+  --bg-2: #f3f7ff;
+  --text: #0A192F;
+  --muted: #445;
+  --accent: #D4AF37;
+  --accent-600: #b8942e;
+  --shadow: rgba(10,25,47,0.15);
+}
+
+/* ==================== Body ==================== */
+body {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.6;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
@@ -27,117 +53,114 @@ body.light-theme {
   padding: 0 20px;
 }
 
-/* Header */
+/* ==================== Header ==================== */
 header {
-  background-color: #0A192F;
-  padding: 15px 0;
-  border-bottom: 1px solid #D4AF37;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--bg);
+  border-bottom: 1px solid var(--accent);
+  box-shadow: 0 4px 10px var(--shadow);
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
+  height: 135px;
 }
 
-body.light-theme header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #D4AF37;
+.logo img {
+  height: 150px;
+  width: auto;
+  display: block;
 }
 
-.logo h1, .logo-text {
-  font-size: 24px;
-  color: #D4AF37;
-  font-weight: bold;
-}
-
-/* Navegação */
-nav ul {
-  list-style: none;
+/* ==================== Navegação ==================== */
+nav {
   display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
+  gap: 20px;
+  align-items: center;
 }
 
-nav ul li a, nav a {
+nav a {
   text-decoration: none;
-  color: #E0E0E0;
+  color: var(--text);
   font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-body.light-theme nav a {
-  color: #0A192F;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 nav a:hover,
 nav a.active {
-  color: #D4AF37;
-  border-bottom: 2px solid #D4AF37;
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
   padding-bottom: 3px;
 }
 
-/* Botão alternar tema */
+/* ==================== Botão Tema ==================== */
 .theme-toggle {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
-  background-color: #D4AF37;
+  background: var(--accent);
+  color: var(--bg);
   border: none;
-  border-radius: 50%;
-  padding: 0.6rem 0.75rem;
-  font-size: 1.5rem;
+  border-radius: 999px;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
   cursor: pointer;
   z-index: 9999;
-  box-shadow: 0 0 8px #D4AF37;
-  color: #0A192F;
+  box-shadow: 0 0 12px var(--accent);
+  user-select: none;
+  transition: background-color .3s ease, transform .2s ease;
 }
 
-/* Hero Section */
+.theme-toggle:hover {
+  background: var(--accent-600);
+  transform: translateY(-2px);
+}
+
+.theme-toggle:active {
+  transform: translateY(0);
+}
+
+/* ==================== Hero ==================== */
 .hero {
-  background: linear-gradient(to bottom right, #0A192F, #112B50);
+  background: linear-gradient(to bottom right, var(--bg), var(--bg-2));
   text-align: center;
   padding: 5rem 2rem;
   transition: background 0.3s ease;
 }
 
-body.light-theme .hero {
-  background: linear-gradient(to bottom right, #dbeeff, #c9e1ff);
-}
-
-.hero h2, .hero h1 {
-  font-size: 3rem;
+.hero h1,
+.hero h2 {
+  font-size: var(--h1);
   margin-bottom: 1rem;
-  color: #D4AF37;
+  color: var(--accent);
 }
 
 .hero p {
-  font-size: 1.2rem;
+  font-size: var(--p);
   color: inherit;
 }
 
-/* Art Movement Sections */
+/* ==================== Movimentos Artísticos ==================== */
 .art-movement {
-  background-color: #112B50;
+  background-color: var(--bg-2);
   margin: 30px auto;
   padding: 30px;
-  border-radius: 8px;
+  border-radius: var(--radius);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   max-width: 900px;
   transition: background-color 0.3s ease;
 }
 
-body.light-theme .art-movement {
-  background-color: #fff;
-}
-
 .art-movement h3 {
   font-size: 28px;
-  color: #D4AF37;
+  color: var(--accent);
   margin-bottom: 25px;
   text-align: center;
 }
@@ -156,14 +179,12 @@ body.light-theme .art-movement {
 .movement-details .description p {
   margin-bottom: 15px;
   font-size: 16px;
-  color: inherit;
 }
 
 .movement-details .description h4 {
   font-size: 18px;
-  color: #D4AF37;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  color: var(--accent);
+  margin: 20px 0 10px;
 }
 
 .movement-details .description ul {
@@ -177,21 +198,21 @@ body.light-theme .art-movement {
 
 .notable-artists {
   flex: 1;
-  background-color: #FDF5E6;
+  background-color: var(--cream);
   padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #F0E6D2;
+  border-radius: var(--radius);
+  border: 1px solid var(--cream-border);
 }
 
 .notable-artists h4 {
   font-size: 18px;
-  color: #5C4033;
+  color: var(--brown);
   margin-bottom: 10px;
 }
 
 .notable-artists ul {
   list-style: none;
-  color: #5C4033;
+  color: var(--brown);
 }
 
 .notable-artists ul li {
@@ -202,24 +223,19 @@ body.light-theme .art-movement {
 
 .notable-artists ul li::before {
   content: '•';
-  color: #5C4033;
+  color: var(--brown);
   position: absolute;
   left: 0;
 }
 
-/* Footer */
+/* ==================== Footer ==================== */
 footer {
-  background-color: #0A192F;
-  color: #E0E0E0;
+  background-color: var(--bg);
+  color: var(--text);
   padding: 30px 0;
   margin-top: 40px;
-  border-top: 1px solid #D4AF37;
+  border-top: 1px solid var(--accent);
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-body.light-theme footer {
-  background-color: #5C4033;
-  color: #ffffff;
 }
 
 .footer-content {
@@ -236,7 +252,6 @@ body.light-theme footer {
 
 .footer-info p {
   font-size: 14px;
-  color: inherit;
 }
 
 .footer-social a {
@@ -247,7 +262,7 @@ body.light-theme footer {
 }
 
 .footer-social a:hover {
-  color: #D4AF37;
+  color: var(--accent);
 }
 
 .copyright {
@@ -258,17 +273,22 @@ body.light-theme footer {
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Responsividade */
+/* ==================== Responsividade ==================== */
 @media (max-width: 768px) {
   header {
     flex-direction: column;
+    height: auto;
     text-align: center;
+    gap: 10px;
   }
 
-  nav ul {
+  nav {
     flex-direction: column;
-    align-items: center;
     gap: 10px;
+  }
+
+  .logo img {
+    height: 120px;
   }
 
   .movement-details {

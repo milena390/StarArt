@@ -5,7 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>StarArt</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styleprincipal.css" />
+  <link rel="stylesheet" href="../css/styleprincipal.css" />
+   <!-- CSS Global -->
+  <link rel="stylesheet" href="../css/styleglobal.css">
+
+  <!-- Font Awesome (padrão para todas as páginas) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="scriptprincipal.js" defer></script>
 </head>
 <body>
@@ -18,14 +23,15 @@
 
   <!-- Botão tema claro/escuro -->
   <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema">
-    <span class="icon sun" aria-hidden="true">🤍</span>
+    <span class="icon sun" aria-hidden="true"> ☀️</span>
   </button>
 
   <!-- Header -->
  <header>
-  <div class="logo-container">
-    <span class="logo-text">StarArt</span>
-  </div>
+
+  <a href="index.html" class="logo">
+    <img src="im/logotipo.png" alt="Logotipo do Site">
+  </a>
   <nav>
     <a href="#" class="active">Início</a>
     <a href="historia.html">História</a>
@@ -71,12 +77,10 @@
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 StarArt. Todos os direitos reservados.</p>
-    <p>
-      <a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a>
-    </p>
-  </footer>
+     <footer>
+        <p>&copy; 2025 StarArt – Todos os direitos reservados.</p>
+    </footer>
+
 
   <script>
     window.onload = () => {
@@ -104,7 +108,7 @@
       }
     };
     </script>
-    
+  
     
 </body>
 </html>
