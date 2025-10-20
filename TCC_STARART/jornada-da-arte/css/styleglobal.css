@@ -1,24 +1,31 @@
 /* ================== FONTES ================== */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
 
-/* ================== VARIÁVEIS DE TEMA ================== */
+/* =============== Tokens / Tema =============== */
 :root {
-  /* Tema escuro (default) */
   --bg: #0A192F;
+  --bg-2: #112B50;
   --text: #E0E0E0;
-  --accent: #D4AF37; /* dourado */
-  --shadow: rgba(0,0,0,0.5);
-  --card-bg: #112240;
-}
-
-.light-mode {
-  --bg: #F5F5F5;
-  --text: #222;
+  --muted: #C9D1D9;
   --accent: #D4AF37;
-  --shadow: rgba(0,0,0,0.1);
-  --card-bg: #ffffff;
+  --accent-600: #b8942e;
+  --shadow: rgba(0,0,0,0.4);
+
+  --radius: 12px;
+
+  --h1: clamp(2.2rem, 2.6vw + 1.2rem, 3rem);
+  --p: clamp(1rem, 0.5vw + 0.9rem, 1.15rem);
 }
 
+body.light-theme {
+  --bg: #dbeeff;
+  --bg-2: #f3f7ff;
+  --text: #0A192F;
+  --muted: #445;
+  --accent: #D4AF37;
+  --accent-600: #b8942e;
+  --shadow: rgba(10,25,47,0.15);
+}
 /* ================== ESTILO GERAL ================== */
 body {
   margin: 0;
