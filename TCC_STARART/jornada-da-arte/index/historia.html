@@ -1,223 +1,189 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>A Jornada da Arte no Tempo</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-     <!-- CSS Global -->
-  <link rel="stylesheet" href="../css/styleglobal.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo da Arte - Movimentos Artísticos</title>
+    <link rel="stylesheet" href="../css/movimentos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <!-- CSS Global -->
+  <link rel="stylesheet" href="../css/styleglobal.css">
 
   <!-- Font Awesome (padrão para todas as páginas) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* Cores de tema */
-    .theme-accent { color: #D4AF37; } /* Dourado */
-    .theme-accent.light-theme { color: #6a8eab; } /* Azul claro */
-    
-    .theme-accent-bg { background-color: #D4AF37; } /* Dourado no fundo */
-    .theme-accent-bg.light-theme { background-color: #9cbdd7; } /* Azul claro no fundo */
-    
-    .theme-accent-border { border-bottom: 1px solid #D4AF37; } /* Borda dourada */
-    .theme-accent-border.light-theme { border-bottom: 1px solid #6a8eab; } /* Borda azul claro */
-    
-    /* Reset de box model */
-    * { 
-        box-sizing: border-box; 
-        margin: 0; 
-        padding: 0;
-    }
-
-    /* Imagens responsivas */
-    img { 
-        max-width: 100%; 
-        display: block; 
-    }
-
-    /* Estilo de foco visível */
-    :focus-visible {
-        outline: 3px solid #D4AF37;
-        outline-offset: 3px;
-        border-radius: 8px;
-    }
-    body.light-theme :focus-visible {
-        outline: 3px solid #6a8eab;
-    }
-
-    /* Estilos do botão de alternância de tema */
-    .theme-toggle {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        border: none;
-        border-radius: 50%;
-        width: 52px;
-        height: 52px;
-        display: grid;
-        place-items: center;
-        font-size: 1.8rem;
-        cursor: pointer;
-        z-index: 9999;
-        box-shadow: 0 0 12px #D4AF37;
-        user-select: none;
-        transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    }
-    .theme-toggle.light-theme { 
-        box-shadow: 0 0 12px #9cbdd7;
-        background-color: #f4f4f4;
-    }
-    .theme-toggle:hover { 
-        transform: scale(1.1); 
-    }
-    
-    /* Estilos de cartões */
-    .card {
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 30px;
-        position: relative;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        background-color: white;
-        transition: box-shadow 0.3s ease;
-    }
-    .card.light-theme {
-        box-shadow: 0 4px 6px rgba(10, 25, 47, 0.15);
-    }
-    
-    .card:hover {
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Efeito hover no card */
-    }
-
-    /* Estilo para círculos em cartões */
-    .circle {
-        width: 30px;
-        height: 30px;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        position: absolute;
-        left: -15px;
-        top: 20px;
-        background-color: #D4AF37; /* Fundo dourado */
-        color: white;
-        transition: all 0.3s ease;
-    }
-
-    /* Estilo do título do card */
-    .card h3 {
-        margin-left: 30px;
-        margin-bottom: 10px;
-        font-size: 1.4rem;
-        font-family: 'Playfair Display', serif;
-        color: #333; /* Cor escura para o título */
-    }
-
-    /* Estilo do parágrafo dentro do card */
-    .card p {
-        margin-left: 30px;
-        text-align: justify;
-        font-size: 1rem;
-        color: #666;
-    }
-
-    /* Destaques dentro do card */
-    .highlight {
-        margin-left: 30px;
-        padding: 10px;
-        border-radius: 6px;
-        margin-top: 10px;
-        font-size: 0.95rem;
-        background-color: #f0f0f0;
-        color: #333;
-        border-left: 5px solid #D4AF37; /* Destaque dourado à esquerda */
-    }
-
-    /* Estilos de texto */
-    body {
-        font-family: 'Arial', sans-serif; /* Fonte padrão */
-        line-height: 1.6;
-        background-color: #f9f9f9; /* Cor de fundo suave */
-        color: #333;
-        padding: 20px;
-    }
-    
-    /* Estilo do texto e links */
-    a {
-        color: #D4AF37; /* Cor dourada para links */
-        text-decoration: none;
-    }
-
-    a:hover {
-        color: #6a8eab; /* Cor azul claro ao passar o mouse */
-        text-decoration: underline;
-    }
-
-</style>
-
 </head>
 <body>
-    <header class="theme-bg theme-accent-border">
-        <div class="logo-container">
-            <a href="index.html" class="logo">
-                <img src="im/logotipo.png" alt="Logotipo do Site">
-            </a>
-        </div>
-       <nav>
-    <a href="index.html" >Início</a>
-    <a href="#" class="active">História</a>
-    <a href="movimentos.html">Movimentos</a>
-    <a href="../jogos_php/index.php">Jogos</a>
-    <a href="../autor/autores.html">Autores</a>
-    <a href="../contatostar/contatos.html">Contato</a>
-  </nav>
-</header>
+    <!-- HEADER -->
+    <header>
+        <a href="historia.html" class="logo">
+            <img src="im/logotipo.png" alt="Logotipo do Site">
+        </a>
+        <nav>
+            <a href="index.html" >Início</a>
+            <a href="#" class="active">História</a>
+            <a href="movimentos.html" >Movimentos</a>
+            <a href="../jogos_php/index.php">Jogos</a>
+            <a href="../autor/autores.html">Autores</a>
+            <a href="../contatostar/contatos.html">Contato</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2>História da Arte</h2>
+            </div>
+        </section>
+
+        <!-- Movimento: Renascimento -->
+        <section class="art-movement">
+            <div class="container">
+                <h3>Arte Pré-Histórica</h3>
+                <div class="movement-details">
+                    <div class="description">
+                        <p>As primeiras manifestações artísticas da humanidade surgiram há cerca de 40.000 anos, com pinturas rupestres em cavernas. Estas obras primitivas retratavam principalmente animais e cenas de caça, usando pigmentos naturais.</p>
+                        <h4>Obras importantes:</h4>
+                        <ul>
+                            <li>Pinturas de Lascaux (França)</li>
+                            <li>Altamira (Espanha)</li>
+                        </ul>
+                    </div>
+
+                    
 
 
-   <main> <h2 class="theme-text">História da Arte</h2>
-     <section class="card theme-bg">
-         <div class="circle theme-accent-bg theme-accent">1</div> 
-         <h3>Arte Pré-Histórica</h3> 
-         <p>As primeiras manifestações artísticas da humanidade surgiram há cerca de 40.000 anos, com pinturas rupestres em cavernas. Estas obras primitivas retratavam principalmente animais e cenas de caça, usando pigmentos naturais.</p> 
-         
-         <div class="highlight theme-accent-bg theme-text">Obras importantes: Pinturas de Lascaux (França) e Altamira (Espanha)</div>
-         </section> 
-         <section class="card theme-bg"> <div class="circle theme-accent-bg theme-accent">2</div> <h3>Arte Antiga</h3>
-             <p>As civilizações do Egito, Mesopotâmia, Grécia e Roma desenvolveram estilos artísticos sofisticados. A arte egípcia era simbólica e ritualística, enquanto os gregos buscavam a perfeição e harmonia nas proporções.</p>
-             <div class="highlight theme-accent-bg theme-text">Obras importantes: Pirâmides de Gizé, Partenon, Coliseu Romano</div> 
-            </section>
-             <section class="card theme-bg"> <div class="circle theme-accent-bg theme-accent">3</div> <h3>Arte Medieval</h3> 
-                <p>Durante a Idade Média (séculos V-XV), a arte esteve fortemente ligada à religião. Os estilos Românico e Gótico dominaram a arquitetura, enquanto a pintura e escultura serviam principalmente para educar os fiéis sobre histórias bíblicas.</p> 
-                <div class="highlight theme-accent-bg theme-text">Obras importantes: Catedral de Notre-Dame, iluminuras medievais, tapeçaria de Bayeux</div>
-             </section>
-              <section class="card theme-bg"> <div class="circle theme-accent-bg theme-accent">4</div> <h3>Renascimento</h3>
-                 <p>O Renascimento (séculos XIV-XVII) marcou o retorno aos ideais clássicos greco-romanos. Artistas como Leonardo da Vinci e Michelangelo revolucionaram a arte com técnicas de perspectiva, anatomia e um novo foco no humanismo.</p>
-                  <div class="highlight theme-accent-bg theme-text">Obras importantes: Mona Lisa, Capela Sistina, O Nascimento de Vênus</div>
-                 </section>
-                  <section class="card theme-bg"> <div class="circle theme-accent-bg theme-accent">5</div>
-                     <h3>Arte Moderna e Contemporânea</h3>
-                      <p>A partir do século XIX, movimentos como Impressionismo, Cubismo, Surrealismo e Expressionismo romperam com tradições anteriores. No século XX, a arte tornou-se cada vez mais experimental, com o surgimento da arte abstrata, pop art e arte conceitual.</p>
-                       <div class="highlight theme-accent-bg theme-text">Obras importantes: Noite Estrelada (Van Gogh), Guernica (Picasso), Campbell's Soup Cans (Warhol)</div> </section> </main>
+                    <div class="notable-artists">
+                        <h4>Quem criou?</h4>
+                        <ul>
+                            <li>Os autores da arte pré-histórica são desconhecidos. As obras eram feitas coletivamente, com fins rituais, e não havia ideia de "artista" como hoje.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movimento: Barroco -->
+        <section class="art-movement">
+            <div class="container">
+                <h3>Arte Antiga</h3>
+                <div class="movement-details">
+                    <div class="description">
+                        <p>As civilizações do Egito, Mesopotâmia, Grécia e Roma desenvolveram estilos artísticos sofisticados. A arte egípcia era simbólica e ritualística, enquanto os gregos buscavam a perfeição e harmonia nas proporções.</p>
+                        <h4>Obras importantes:</h4>
+                        <ul>
+                            <li>Pirâmides de Gizé</li>
+                            <li>Partenon</li>
+                            <li>Coliseu Romano</li>
+                        </ul>
+                    </div>
+                    <div class="notable-artists">
+                        <h4>Quem criou?</h4>
+                        <ul>
+                            <li>Na arte antiga, a maioria das obras era feita por artesãos anônimos, mas na Grécia surgiram nomes como Fídias e Policleto, famosos por suas esculturas.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movimento: Impressionismo -->
+        <section class="art-movement">
+            <div class="container">
+                <h3>Arte Medieval</h3>
+                <div class="movement-details">
+                    <div class="description">
+                        <p>Durante a Idade Média (séculos V-XV), a arte esteve fortemente ligada à religião. Os estilos Românico e Gótico dominaram a arquitetura, enquanto a pintura e escultura serviam principalmente para educar os fiéis sobre histórias bíblicas.</p>
+                        <h4>Obras importantes:</h4>
+                        <ul>
+                            <li>Catedral de Notre-Dame</li>
+                            <li>Iluminuras medievais</li>
+                            <li>Tapeçaria de Bayeux</li>
+                        </ul>
+                    </div>
+                    <div class="notable-artists">
+                        <h4>Quem criou?</h4>
+                        <ul>
+                            <li>Na Idade Média, a maioria dos artistas era anônima, mas alguns como Giotto e Hildegarda de Bingen se destacaram. </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movimento: Cubismo -->
+        <section class="art-movement">
+            <div class="container">
+                <h3>Renascimento</h3>
+                <div class="movement-details">
+                    <div class="description">
+                        <p>O Renascimento (séculos XIV-XVII) marcou o retorno aos ideais clássicos greco-romanos. Artistas como Leonardo da Vinci e Michelangelo revolucionaram a arte com técnicas de perspectiva, anatomia e um novo foco no humanismo.</p>
+                        <h4>Obras importantes:</h4>
+                        <ul>
+                            <li>O Nascimento de Vênus</li>
+                            <li>Capela Sistina</li>
+                            <li>Mona Lisa</li>
+                        </ul>
+                    </div>
+                    <div class="notable-artists">
+                        <h4>Principais artistas:</h4>
+                        <ul>
+                            <li>Leonardo da Vinci</li>
+                            <li>Michelangelo</li>
+                            <li>Rafael</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+         <!-- Movimento: Cubismo -->
+        <section class="art-movement">
+            <div class="container">
+                <h3>Arte Moderna e Contemporânea</h3>
+                <div class="movement-details">
+                    <div class="description">
+                        <p>A partir do século XIX, movimentos como Impressionismo, Cubismo, Surrealismo e Expressionismo romperam com tradições anteriores. No século XX, a arte tornou-se cada vez mais experimental, com o surgimento da arte abstrata, pop art e arte conceitual.</p>
+                        <h4>Obras importantes:</h4>
+                        <ul>
+                            <li>Noite Estrelada</li>
+                            <li>Guernica</li>
+                            <li>Campbell's Soup Cans </li>
+                        </ul>
+                    </div>
+                    <div class="notable-artists">
+                        <h4>Principais artistas:</h4>
+                        <ul>
+                            <li>Van Gogh</li>
+                            <li>Picasso</li>
+                            <li>Warhol</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-        <p>&copy; 2025 StarArt – Todos os direitos reservados.</p>
+        <div class="container copyright">
+            <p>&copy; 2023 Mundo da Arte. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
-    <button id="theme-toggle" class="theme-toggle theme-accent-bg theme-accent" aria-label="Toggle dark and light theme">🌙</button>
-
+    <!-- SCRIPT DO BOTÃO DE TEMA -->
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
-        const themeElements = document.querySelectorAll(
-            '.theme-bg, .theme-accent, .theme-accent-bg, .theme-accent-border, .theme-toggle, .card'
-        );
 
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('light-theme');
-            themeElements.forEach(el => el.classList.toggle('light-theme'));
-
             themeToggle.textContent = body.classList.contains('light-theme') ? '☀️' : '🌙';
         });
     </script>
