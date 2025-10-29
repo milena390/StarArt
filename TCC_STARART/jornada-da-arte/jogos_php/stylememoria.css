@@ -1,60 +1,46 @@
-/* ================== ESTILOS GERAIS E TEMA ================== */
 body {
-  font-family: 'Poppins', Arial, sans-serif; /* Adicionada uma fonte mais moderna (se linkada) */
-  background-color: #0A192F; /* Cor de fundo escura (Dark Mode) */
-  color: #F5F5F5; /* Texto claro */
+  font-family: Arial, sans-serif;
+  background-color: #0A192F;
+  color: #F5F5F5;
   text-align: center;
   padding: 20px;
   margin: 0;
   overflow-x: hidden;
-  line-height: 1.6; /* Melhora a legibilidade */
 }
 
 h1 {
-  margin-bottom: 20px;
-  color: #D4AF37; /* Dourado/Âmbar para destaque */
-  font-size: 2.2rem;
+  margin-bottom: 10px;
 }
 
-/* ================== ELEMENTOS DE INTERAÇÃO (BOTÕES/SELECT) ================== */
 .info-bar {
-  margin-bottom: 30px; /* Mais espaço para separar o UI do jogo */
+  margin-bottom: 20px;
 }
 
 button,
 select {
-  padding: 10px 15px; /* Ajuste no padding para melhor toque */
-  margin: 8px;
+  padding: 10px;
+  margin: 5px;
   font-size: 16px;
-  font-weight: 600;
   background-color: #D4AF37;
-  color: #0A192F; /* Cor de texto do fundo para contraste máximo */
+  color: #0A192F;
   border: none;
-  border-radius: 8px; /* Arredondamento um pouco maior */
+  border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra suave para profundidade */
   transition: all 0.3s ease;
 }
 
 button:hover,
 select:hover {
-  background-color: #FFD700; /* Dourado mais claro no hover */
-  transform: translateY(-2px); /* Efeito sutil de 'levantar' */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  background-color: #FFD700;
+  transform: scale(1.05);
 }
 
-/* ================== TABULEIRO E CARTAS ================== */
 .memory-game {
   display: grid;
-  /* Definir as colunas via JS (melhor) ou usar auto-fit/colunas fixas aqui
-     O JS deve definir o template-columns com base no nível:
-     grid-template-columns: repeat(4, 1fr);
-  */
-  grid-gap: 15px; /* Aumentado um pouco o gap */
+  grid-gap: 10px;
   justify-content: center;
-  max-width: 900px; /* Aumentado o max-width */
+  max-width: 800px;
   margin: 0 auto;
-  padding: 10px;
 }
 
 .card {
@@ -68,7 +54,7 @@ select:hover {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1); /* Transição mais suave e natural */
+  transition: transform 0.6s ease;
   transform-style: preserve-3d;
 }
 
@@ -81,30 +67,24 @@ select:hover {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 12px; /* Maior arredondamento */
+  border-radius: 10px;
   backface-visibility: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para 3D */
   object-fit: cover;
   top: 0;
   left: 0;
   user-select: none;
-  border: 3px solid #112B50; /* Borda sutil para separar as cartas */
+  transition: all 0.3s ease;
 }
 
 .card-front {
   transform: rotateY(180deg);
-  background-color: #1a3053; /* Fundo levemente diferente para a frente (caso a imagem não ocupe 100%) */
 }
 
 .card-back {
-  background-color: #D4AF37; /* Cor de trás */
-  display: flex; /* Adicionado display flex para centralizar ícones ou texto */
-  justify-content: center;
-  align-items: center;
-  font-size: 2rem; /* Para o ícone de 'costas' da carta (se usado) */
+  background-color: #D4AF37;
 }
 
-/* ================== POPUPS ================== */
+/* POPUPS */
 .hidden {
   display: none;
 }
@@ -115,73 +95,49 @@ select:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #0A192F; /* Fundo do tema */
-  color: #F5F5F5;
-  padding: 40px;
+  background-color: #D4AF37;
+  color: #0A192F;
+  padding: 30px 50px;
   border-radius: 15px;
-  border: 2px solid #D4AF37; /* Borda destacada */
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.8); /* Sombra forte e dourada */
+  box-shadow: 0 0 20px #D4AF37, 0 0 40px #FFD700;
   z-index: 1000;
   text-align: center;
   max-width: 90%;
-  width: 400px; /* Aumentado levemente */
-}
-
-#win-message h2, #ranking-popup h2 {
-    color: #FFD700;
+  width: 350px;
 }
 
 #ranking-popup {
-  background-color: #112B50; /* Fundo um pouco mais claro para o ranking */
-  color: #F5F5F5;
+  background-color: #F5F5F5;
+  color: #0A192F;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-#ranking-list {
-    list-style: none;
-    padding: 0;
-    margin-top: 15px;
+#ranking-popup h2 {
+  margin-top: 0;
 }
 
-#ranking-list li {
-    background-color: rgba(255, 255, 255, 0.1);
-    margin: 5px 0;
-    padding: 8px 15px;
-    border-radius: 5px;
-    width: 100%;
-    text-align: left;
+#ranking-popup button {
+  margin-top: 15px;
 }
 
-
-/* ================== ANIMAÇÕES ================== */
-/* A classe 'teacup' é um exemplo de animação no seu código, ajustei o nome para 'floating-icon' */
-.floating-icon {
+/* Animações */
+.teacup {
   font-size: 4rem;
-  color: #FFD700; /* Dourado para o ícone */
   animation: float 2s infinite ease-in-out;
 }
 
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); } /* Aumento sutil da altura do float */
+  50% { transform: translateY(-10px); }
 }
 
-/* ================== RESPONSIVIDADE ================== */
-@media (max-width: 768px) {
-    .memory-game {
-        grid-gap: 10px; /* Reduz o gap em telas menores */
-    }
-}
-
+/* Responsivo */
 @media (max-width: 600px) {
   .card {
-    width: 90px;
-    height: 90px;
-  }
-  .card-back {
-      font-size: 1.5rem; /* Reduz o tamanho do ícone de trás */
+    width: 100px;
+    height: 100px;
   }
   #win-message, #ranking-popup {
     width: 90%;
@@ -189,13 +145,6 @@ select:hover {
   }
   button, select {
     font-size: 14px;
-    padding: 8px 12px;
+    padding: 8px;
   }
-}
-
-@media (max-width: 400px) {
-    .card {
-        width: 80px;
-        height: 80px;
-    }
 }
