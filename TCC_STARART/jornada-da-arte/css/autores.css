@@ -178,6 +178,18 @@ footer a:hover {
   text-decoration: underline;
   color: #b8942e;
 }
+/* Para justificar todos os parágrafos */
+p {
+  text-align: justify;
+  /* (Opcional) Melhora o espaçamento em alguns navegadores */
+  hyphens: auto; 
+}
+
+/* Ou apenas para parágrafos dentro de um container específico */
+.content-section p {
+  text-align: justify;
+  hyphens: auto; 
+}
 
 /* ===== Tema Claro ===== */
 body.light-theme {
