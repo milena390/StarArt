@@ -3,30 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarsila Do Amaral - O Código da Arte</title>
+    <title>Tarcila Do Amaral - O Código da Arte</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="autores.css" />
+    <link rel="stylesheet" href="../css/styleautor.css" />
+    <link rel="stylesheet" href="../css/autores.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <!-- CSS Global -->
+  <link rel="stylesheet" href="../css/styleglobal.css">
+
+  <!-- Font Awesome (padrão para todas as páginas) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <body class="light-theme">
+    <!-- HEADER -->
     <header>
-   <header>
-    <div class="logo">StarArt</div>
-    <nav>
-      <ul>
-        <li><a href="../index/index.html">Início</a></li>
-        <li><a href="../index/movimentos.html">Movimentos da Arte</a></li>
-        <li><a href="../index/historia.html">História da Arte</a></li>
-        <li><a href="autores.html">Autores</a></li>
-        <li><a href="../jogos_php/index.php">Jogos</a></li>
-        <a href="../contatostar/contatos.html">Autores</a>
-      </ul>
-    </nav>
-  </header>
+        <a href="autores.html" class="logo">
+            <img src="../index/im/logotipo.png" alt="Logotipo do Site">
+        </a>
+        <nav>
+            <a href="../index/index.html" >Início</a>
+            <a href="../index/historia.html">História</a>
+            <a href="../index/movimentos.html" >Movimentos</a>
+            <a href="../jogos_php/index.php">Jogos</a>
+            <a href="autores.html" class="active">Autores</a>
+            <a href="../contatostar/contatos.html">Contato</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </header>
+    <section class="hero">
+            <div class="container">
+                <h2>Tarcila Do Amaral</h2>
+            </div>
+        </section>
     <main>
         <br>
         <img src="tarsila.jpg" alt="Tarcila Do Amaral" class="author-image">
-        
+        <center>
         <h2>Bibliografia</h2>
         <p>Tarcila Do Amaral (1886-1973): Pintora modernista brasileira, fundamental para o desenvolvimento da arte moderna no Brasil, conhecida por suas cores vibrantes e temas nacionais, especialmente a figura humana e a paisagem brasileira.
             <br>
@@ -63,7 +75,7 @@
             </li>
             <li>
                 <h3>Operários</h3>
-                <img src="Artistas/Tarcila/operarios.webp" alt="Autorretrato" class="art-image">
+                <img src="../autores/Artistas/Tarcila/operarios.webp" alt="Autorretrato" class="art-image">
                 <p>Operários, pintado por Tarsila do Amaral em 1933, reflete a realidade dos trabalhadores urbanos e industriais no Brasil, com uma crítica à exploração da classe operária. A obra apresenta figuras rígidas e sem expressão, em cores fortes, influenciada pelo realismo social e cubismo. Ela marca uma fase de maior engajamento político de Tarsila, abordando questões sociais e de classe, e se distancia de temas puramente estéticos.</p>
             </li>
             <li>
@@ -76,12 +88,24 @@
                 <img src="../autores/Artistas/Tarcila/saopaulogazo.webp" alt="Oliveiras" class="art-image">
                 <p>São Paulo (Gazo), pintado por Tarsila do Amaral em 1924, retrata a urbanização e industrialização da cidade de São Paulo. A obra usa formas geométricas e cores vibrantes para representar o crescimento urbano e as fábricas, simbolizando o ambiente industrial da época. É uma das primeiras obras de Tarsila a refletir seu interesse pela realidade brasileira e antecipa sua abordagem modernista.</p>
             </li>
-        </ul>
+        </ul></center>
     </main>
+    <!-- FOOTER -->
     <footer>
-        <p>Referência: <a href="https://www.ebiografia.com/tarsila_amaral/" target="_blank">ebiografia.com</a></p>
+        <div class="container copyright">
+            <p>&copy; 2023 Mundo da Arte. Todos os direitos reservados.</p>
+        </div>
     </footer>
-    <button id="theme-toggle" aria-label="Alternar tema">🌞</button>
-     <script src="autores.js"></script>
+
+    <!-- SCRIPT DO BOTÃO DE TEMA -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            themeToggle.textContent = body.classList.contains('light-theme') ? '☀️' : '🌙';
+        });
+    </script>
 </body>
 </html>

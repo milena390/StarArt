@@ -3,31 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leonardo Da Vinci- O Código da Arte</title>
+    <title>Leonardo da Vinci - O Código da Arte</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="autores.css" />
-    
+    <link rel="stylesheet" href="../css/styleautor.css" />
+    <link rel="stylesheet" href="../css/autores.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <!-- CSS Global -->
+  <link rel="stylesheet" href="../css/styleglobal.css">
+
+  <!-- Font Awesome (padrão para todas as páginas) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <body class="light-theme">
-   <header>
-    <div class="logo">StarArt</div>
-    <nav>
-      <ul>
-        <li><a href="../index/index.html">Início</a></li>
-        <li><a href="../index/movimentos.html">Movimentos da Arte</a></li>
-        <li><a href="../index/historia.html">História da Arte</a></li>
-        <li><a href="autores.html">Autores</a></li>
-        <li><a href="../jogos_php/index.php">Jogos</a></li>
-        <a href="../contatostar/contatos.html">Autores</a>
-      </ul>
-    </nav>
-  </header>
-    <main>
+    <!-- HEADER -->
+    <header>
+        <a href="autores.html" class="logo">
+            <img src="../index/im/logotipo.png" alt="Logotipo do Site">
+        </a>
+        <nav>
+            <a href="../index/index.html" >Início</a>
+            <a href="../index/historia.html">História</a>
+            <a href="../index/movimentos.html" >Movimentos</a>
+            <a href="../jogos_php/index.php">Jogos</a>
+            <a href="autores.html" class="active">Autores</a>
+            <a href="../contatostar/contatos.html">Contato</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </header>
+    <section class="hero">
+            <div class="container">
+                <h2>Leonardo da Vinci</h2>
+            </div>
+        </section>
+<main>
         <br>
-        <img src="leonardo.jpeg" alt="Vincent van Gogh" class="author-image">
+        <img src="leonardo.jpeg" alt="Leonardo da Vinci" class="author-image">
         
-        <h2>Bibliografia</h2>
+        <center><h2>Bibliografia</h2>
         <p>Leonardo da Vinci (1452–1519): Gênio do Renascimento italiano, foi pintor, inventor, cientista, engenheiro, anatomista, escultor e arquiteto. Considerado um dos maiores talentos da história, sua mente curiosa e multifacetada o tornou símbolo da união entre arte e ciência.
             <br>
             <br>
@@ -55,39 +67,51 @@
             <li>
                 <h3>Homem Vitruviano</h3>
                 <img src="../autores/Artistas/leo/homem.png" alt="Campo de Trigo com Corvos" class="art-image">
-                <p>"Campo de Trigo com Corvos" esta obra foi criada Pós-Impressionismo: Pintada pouco antes de sua morte, esta obra é frequentemente interpretada como um presságio do fim. O céu tempestuoso, o caminho que se bifurca e os corvos voando sobre o campo de trigo criam uma atmosfera de angústia e solidão. As pinceladas são agitadas e as cores escuras e intensas.</p>
+                <p>O "Homem Vitruviano" de Leonardo da Vinci é um desenho que representa um homem nu em duas posições sobrepostas, inscrito em um círculo e um quadrado. Ele foi inspirado nas proporções do corpo humano descritas pelo arquiteto romano Vitrúvio, mostrando que o corpo humano é uma medida ideal para o design e a arquitetura. O desenho simboliza a harmonia entre arte, ciência e natureza, refletindo a visão renascentista de que o ser humano é o centro do universo e a medida de todas as coisas.</p>
             </li>
             <li>
                 <h3>Dama com o Arminho</h3>
                 <img src="../autores/Artistas/leo/dama.png" alt="Os Girassóis" class="art-image">
-                <p>"Os Girassóis", esta obra foi criada Pós-Impressionismo: Van Gogh pintou várias versões de girassóis em vasos. Estas obras são famosas por sua intensidade de cor amarela e suas pinceladas vigorosas. Os girassóis podem ser interpretados como símbolos de gratidão, amizade e a própria vida. A versão de 1889 que você mencionou é uma das mais conhecidas, com cores ricas e texturas marcantes.</p>
+                <p>A "Dama com o Arminho" de Leonardo da Vinci é um retrato de Cecília Gallerani, amante do duque Ludovico Sforza, pintado por volta de 1489. Ela é mostrada com um arminho nos braços, símbolo de pureza e virtude. A obra é famosa pela técnica de sfumato, que cria uma transição suave entre cores, e pela maneira como Da Vinci capturou a expressão serena e a psicologia da figura. A pintura reflete a sofisticação e profundidade das relações humanas no Renascimento.</p>
             </li>
             <li>
                 <h3>Última Ceia</h3>
                 <img src="../autores/Artistas/leo/ultima ceia da vinci.jpeg" alt="Autorretrato" class="art-image">
-                <p>"Autorretrato com Chapéu de Feltro Cinza" esta obra foi criada Pós-Impressionismo: Van Gogh pintou numerosos autorretratos ao longo de sua vida, usando-os como uma forma de autoanálise e experimentação artística. Neste retrato, seu olhar é penetrante e sua expressão séria. As pinceladas são visíveis e a cor é aplicada de forma expressiva, revelando a intensidade de sua personalidade.</p>
+                <p>A "Última Ceia" de Leonardo da Vinci, pintada entre 1495 e 1498, retrata o momento em que Jesus anuncia que um de seus discípulos o trairá. A cena mostra Jesus e os *12 apóstolos, com expressões e reações emocionais bem distintas. Da Vinci utiliza perspectiva linear para centralizar a figura de Jesus e cria profundidade com o uso de sfumato. A obra é cheia de simbolismo, como o número três, representando a Santíssima Trindade. É uma das mais importantes pinturas do Renascimento e um marco na história da arte.</p>
             </li>
             <li>
-                <h3>Virgem Menino</h3>
-                <img src="Artistas/leo/virgem_menino.png" alt="Oliveiras" class="art-image">
-                <p>"Oliveiras" foi pintada Pós-Impressionismo: Durante sua estadia no asilo, Van Gogh ficou fascinado pelas oliveiras, pintando-as em diferentes momentos do dia e em diferentes estados de espírito. Estas pinturas exploram as formas sinuosas das árvores, a luz mediterrânea e a paleta de cores que varia do verde-oliva ao azul e ao roxo.</p>
+                <h3>A Virgem e o Menino</h3>
+                <img src="../autores/Artistas/leo/virgem_menino.png" alt="A Virgem e o Menino" class="art-image">
+                <p>"A Virgem e o Menino" é uma pintura de Leonardo da Vinci que mostra a Virgem Maria com o Menino Jesus em seus braços ou ao seu lado, transmitindo ternura e ligação materna. Leonardo criou várias versões com esse tema, destacando-se pelo uso do sfumato (técnica que suaviza contornos), pela expressividade dos rostos e pela composição harmoniosa. A obra reflete o ideal renascentista de beleza, humanidade e espiritualidade.</p>
             </li>
             <li>
-                <h3>Virgem</h3>
-                <img src="../autores/Artistas/leo/virgem.png" alt="Oliveiras" class="art-image">
-                <p>"Oliveiras" foi pintada Pós-Impressionismo: Durante sua estadia no asilo, Van Gogh ficou fascinado pelas oliveiras, pintando-as em diferentes momentos do dia e em diferentes estados de espírito. Estas pinturas exploram as formas sinuosas das árvores, a luz mediterrânea e a paleta de cores que varia do verde-oliva ao azul e ao roxo.</p>
+                <h3>A Virgem dos Rochedos</h3>
+                <img src="../autores/Artistas/leo/virgem.png" alt="A Virgem dos Rochedos" class="art-image">
+                <p>"A Virgem dos Rochedos" é uma pintura de Leonardo da Vinci, criada entre 1483 e 1486. A obra mostra a Virgem Maria com o Menino Jesus, João Batista criança e um anjo, todos em uma paisagem rochosa. A cena é marcada pelo uso de luz suave, perspectiva atmosférica e gestos delicados, típicos do estilo de Leonardo. Ele também usa o sfumato, técnica que suaviza os contornos e dá profundidade à imagem. A obra tem duas versões principais: uma no Museu do Louvre (Paris) e outra na National Gallery (Londres).</p>
             </li>
             <li>
                 <h3>Batismo de Cristo</h3>
-                <img src="../autores/Artistas/leo/virgem_menino.png" alt="Oliveiras" class="art-image">
-                <p>"Oliveiras" foi pintada Pós-Impressionismo: Durante sua estadia no asilo, Van Gogh ficou fascinado pelas oliveiras, pintando-as em diferentes momentos do dia e em diferentes estados de espírito. Estas pinturas exploram as formas sinuosas das árvores, a luz mediterrânea e a paleta de cores que varia do verde-oliva ao azul e ao roxo.</p>
+                <img src="../autores/Artistas/leo/batismo.jpg" alt="Batismo de Cristo" class="art-image">
+                <p>"O Batismo de Cristo" é uma pintura feita por Andrea del Verrocchio com ajuda de Leonardo da Vinci, por volta de 1475. A obra mostra Jesus sendo batizado por João Batista no rio Jordão, com a presença de anjos e o Espírito Santo em forma de pomba. Leonardo pintou um dos anjos com grande realismo e beleza, mostrando seu talento mesmo jovem. A pintura marca a transição para o estilo renascentista, com mais naturalismo e profundidade.</p>
             </li>
         </ul>
-    </main>
+    </main></center>
+    <!-- FOOTER -->
     <footer>
-        <p>Referência: <a href="https://www.ebiografia.com/leonardo_vinci/" target="_blank">ebiografia.com</a></p>
+        <div class="container copyright">
+            <p>&copy; 2023 Mundo da Arte. Todos os direitos reservados.</p>
+        </div>
     </footer>
-    <button id="theme-toggle" aria-label="Alternar tema">🌞</button>
-     <script src="autores.js"></script>
+
+    <!-- SCRIPT DO BOTÃO DE TEMA -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            themeToggle.textContent = body.classList.contains('light-theme') ? '☀️' : '🌙';
+        });
+    </script>
 </body>
 </html>

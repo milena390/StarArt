@@ -3,30 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paplo Picasso - O Código da Arte</title>
+    <title>Pablo Picasso - O Código da Arte</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-     <link rel="stylesheet" href="autores.css" />
+    <link rel="stylesheet" href="../css/styleautor.css" />
+    <link rel="stylesheet" href="../css/autores.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ <!-- CSS Global -->
+  <link rel="stylesheet" href="../css/styleglobal.css">
 
+  <!-- Font Awesome (padrão para todas as páginas) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <body class="light-theme">
-  <header>
-    <div class="logo">StarArt</div>
-    <nav>
-      <ul>
-        <li><a href="../index/index.html">Início</a></li>
-        <li><a href="../index/movimentos.html">Movimentos da Arte</a></li>
-        <li><a href="../index/historia.html">História da Arte</a></li>
-        <li><a href="autores.html">Autores</a></li>
-        <li><a href="../jogos_php/index.php">Jogos</a></li>
-        <a href="../contatostar/contatos.html">Autores</a>
-      </ul>
-    </nav>
-  </header>
+    <!-- HEADER -->
+    <header>
+        <a href="autores.html" class="logo">
+            <img src="../index/im/logotipo.png" alt="Logotipo do Site">
+        </a>
+        <nav>
+            <a href="../index/index.html" >Início</a>
+            <a href="../index/historia.html">História</a>
+            <a href="../index/movimentos.html" >Movimentos</a>
+            <a href="../jogos_php/index.php">Jogos</a>
+            <a href="autores.html" class="active">Autores</a>
+            <a href="../contatostar/contatos.html">Contato</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </header>
+    <section class="hero">
+            <div class="container">
+                <h2>Pablo Picasso</h2>
+            </div>
+        </section>
     <main>
         <br>
-        <img src="Pablo_Picasso.jpg" alt="Vincent van Gogh" class="author-image">
-        
+        <img src="Pablo_Picasso.jpg" alt="Pablo Picasso" class="author-image">
+        <center>
         <h2>Bibliografia</h2>
         <p>Pablo Picasso (1881–1973): Pintor e escultor espanhol, é considerado um dos artistas mais influentes do século XX e um dos criadores do cubismo, ao lado de Georges Braque. Sua produção artística é vasta e diversa, marcada por fases distintas e inovações radicais.
             <br>
@@ -68,12 +80,24 @@
                 <p>Ciência e Caridade (1897) de Picasso é uma pintura realista criada quando ele tinha apenas 15 anos. A obra mostra uma mulher doente assistida por um médico, simbolizando a ciência, e por uma freira, representando a caridade. O quadro reflete a influência acadêmica e o talento precoce de Picasso antes de sua transição para estilos mais experimentais. Atualmente, está no Museu</p>
             </li>
             
-        </ul>
+        </ul></center>
     </main>
+    <!-- FOOTER -->
     <footer>
-        <p>Referência: <a href="https://www.ebiografia.com/pablo_picasso/" target="_blank">ebiografia.com</a></p>
+        <div class="container copyright">
+            <p>&copy; 2023 Mundo da Arte. Todos os direitos reservados.</p>
+        </div>
     </footer>
-    <button id="theme-toggle" aria-label="Alternar tema">🌞</button>
-     <script src="autores.js"></script>
+
+    <!-- SCRIPT DO BOTÃO DE TEMA -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-theme');
+            themeToggle.textContent = body.classList.contains('light-theme') ? '☀️' : '🌙';
+        });
+    </script>
 </body>
 </html>
