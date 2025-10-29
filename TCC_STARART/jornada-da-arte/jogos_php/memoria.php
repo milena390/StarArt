@@ -88,11 +88,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const wrongSound = document.getElementById('wrong-sound');
 
     const imagePaths = [
-        'memoria/tarsila.png','memoria/noite.png','memoria/harmonia.png',
-        'memoria/cuca.png','memoria/claude.png','memoria/cafe.png',
-        'memoria/tempo.png','memoria/beijo.png','memoria/abaporu.png','memoria/cachorro.png',
-        'memoria/mona.png','memoria/mulher.png','memoria/cavalo.png','memoria/pinguim.png',
-        'memoria/unicornio.png'
+        'memoria/abaporu.png','memoria/beijo.png','memoria/cachorro.png',
+        'memoria/cafe.png','memoria/claude.png','memoria/cuca.png',
+        'memoria/harmonia.png','memoria/mona.png','memoria/mulher.png','memoria/noite.png',
+        'memoria/tarsila.png','memoria/tempo.png','memoria/vangogh.png','memoria/au.png',
+        'memoria/grito.png'
     ];
 
     let cardsArray = [];
